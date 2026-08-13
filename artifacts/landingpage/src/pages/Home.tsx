@@ -30,7 +30,9 @@ export default function Home() {
         <FAQ />
         <FinalCTA />
       </main>
-      <Footer />
+      <div className="pb-24 sm:pb-0">
+        <Footer />
+      </div>
       <MobileStickyCTA />
     </div>
   );

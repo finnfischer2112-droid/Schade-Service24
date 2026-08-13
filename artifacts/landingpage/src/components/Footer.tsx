@@ -41,7 +41,7 @@ export function Footer() {
                 <a 
                   href={config.EMAIL_HREF} 
                   onClick={() => trackEvent('email_click')}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors break-all"
                 >
                   E-Mail: {config.EMAIL}
                 </a>

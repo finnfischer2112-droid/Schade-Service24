@@ -12,22 +12,23 @@ export function Header() {
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
               <span className="font-bold text-xl leading-none">24</span>
             </div>
-            <span className="font-bold text-xl tracking-tight text-foreground">
+            <span className="hidden sm:inline font-bold text-xl tracking-tight text-foreground">
               Schaden-Service<span className="text-primary">24</span>
             </span>
           </a>
         </div>
         
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
           <a 
             href={config.PHONE_HREF} 
             onClick={() => trackEvent('phone_click')}
-            className="hidden md:flex items-center text-sm font-semibold text-foreground hover:text-primary transition-colors"
+            aria-label={`Anrufen: ${config.PHONE}`}
+            className="flex items-center justify-center min-h-11 min-w-11 rounded-lg text-sm font-semibold text-foreground hover:text-primary transition-colors md:min-w-0 md:px-2"
           >
-            <Phone className="w-4 h-4 mr-2" />
-            {config.PHONE}
+            <Phone className="w-5 h-5 md:w-4 md:h-4 md:mr-2" />
+            <span className="hidden md:inline">{config.PHONE}</span>
           </a>
-          <CTAButton className="h-11 px-5 py-2 text-sm hidden sm:inline-flex" />
+          <CTAButton className="h-11 px-4 sm:px-5 py-2 text-sm" />
         </div>
       </div>
     </header>

@@ -54,7 +54,7 @@ export function Hero() {
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10"></div>
             </div>
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 sm:-left-8 bg-background p-4 rounded-2xl shadow-xl border border-border flex items-center gap-4">
+            <div className="absolute -bottom-6 left-0 sm:-left-8 bg-background p-4 rounded-2xl shadow-xl border border-border flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <CheckCircle2 className="w-6 h-6 text-primary" />
               </div>

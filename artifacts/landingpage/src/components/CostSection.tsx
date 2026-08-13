@@ -25,7 +25,7 @@ export function CostSection() {
 
           <CTAButton className="mb-8" />
 
-          <p className="text-xs text-muted-foreground max-w-lg mx-auto">
+          <p className="text-sm text-muted-foreground max-w-lg mx-auto">
             * Kostenübernahme vorausgesetzt / abhängig vom jeweiligen Schadenfall und der Regulierung durch die Versicherung.
           </p>
         </div>

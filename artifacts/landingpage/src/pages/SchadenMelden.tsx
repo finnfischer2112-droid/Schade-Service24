@@ -259,9 +259,10 @@ export default function SchadenMelden() {
                     <img src={URL.createObjectURL(file)} className="w-full h-full object-cover" alt="Schaden" />
                     <button 
                       onClick={() => removePhoto(i)} 
-                      className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-full hover:bg-destructive transition-colors backdrop-blur-md"
+                      aria-label="Foto entfernen"
+                      className="absolute top-1.5 right-1.5 bg-black/60 text-white w-11 h-11 flex items-center justify-center rounded-full hover:bg-destructive transition-colors backdrop-blur-md"
                     >
-                      <X className="w-4 h-4" />
+                      <X className="w-5 h-5" />
                     </button>
                   </div>
                 ))}
@@ -566,7 +567,7 @@ export default function SchadenMelden() {
         </Link>
         <a 
           href={config.PHONE_HREF} 
-          className="flex items-center text-sm font-bold text-foreground hover:text-primary transition-colors bg-secondary/80 hover:bg-secondary px-4 py-2 sm:px-5 sm:py-2.5 rounded-full"
+          className="flex items-center min-h-11 text-sm font-bold text-foreground hover:text-primary transition-colors bg-secondary/80 hover:bg-secondary px-4 sm:px-5 rounded-full"
         >
           <Phone className="w-4 h-4 mr-2" />
           <span className="hidden sm:inline">{config.PHONE}</span>
@@ -584,7 +585,7 @@ export default function SchadenMelden() {
                 <button 
                   onClick={prevStep} 
                   disabled={step === 0 || isSubmitting}
-                  className={cn("text-muted-foreground hover:text-foreground transition-colors flex items-center text-sm font-bold", (step === 0 || isSubmitting) && "opacity-0 pointer-events-none")}
+                  className={cn("text-muted-foreground hover:text-foreground transition-colors flex items-center min-h-11 pr-3 -ml-1 text-sm font-bold", (step === 0 || isSubmitting) && "opacity-0 pointer-events-none")}
                 >
                   <ArrowLeft className="w-4 h-4 mr-1.5" /> Zurück
                 </button>
