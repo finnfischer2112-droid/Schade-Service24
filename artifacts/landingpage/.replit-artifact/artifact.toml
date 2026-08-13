@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Schaden-Service24 Landingpage"
+description = "Hochkonvertierende Google-Ads-Landingpage für Schaden-Service24, einen unabhängigen KFZ-Sachverständigen im Raum Kaiserslautern. Ziel: Besucher melden ihren Unfallschaden über den CTA 'Jetzt kostenfrei starten'."
+version = "1.0.0"
+id = "artifacts/landingpage"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20511
+
+[services.development]
+run = "pnpm --filter @workspace/landingpage run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/landingpage", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/landingpage/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20511"
+BASE_PATH = "/"

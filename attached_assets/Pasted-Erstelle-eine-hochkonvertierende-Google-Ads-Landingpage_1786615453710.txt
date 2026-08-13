@@ -1,0 +1,935 @@
+Erstelle eine hochkonvertierende Google-Ads-Landingpage für einen KFZ-Sachverständigen / Schadengutachter mit dem Namen:
+
+**Schaden-Service24**
+
+Die Landingpage soll sich optisch und strukturell stark am modernen, cleanen Conversion-Design von **https://www.repaircheck.de** orientieren, darf aber NICHT als 1:1-Kopie erscheinen.
+
+Die bestehende Website des Unternehmens ist:
+
+**https://rcs.stageberry.net**
+
+Nutze diese bestehende Website als primäre Quelle für die Unternehmensinformationen, Leistungen, Aussagen, Kontaktdaten, Standortinformationen und fachlichen Inhalte.
+
+---
+
+# 1. ABSOLUT WICHTIG: SSR
+
+Die gesamte Landingpage muss **server-side rendered (SSR)** umgesetzt werden.
+
+Das ist eine harte technische Anforderung.
+
+Ziel:
+
+* vollständiges HTML bereits auf dem Server rendern
+* relevante Inhalte müssen ohne JavaScript im initialen HTML vorhanden sein
+* Googlebot muss die komplette Landingpage direkt crawlen können
+* Title, Meta Description, H1, H2, Fließtexte, FAQs und lokale SEO-Inhalte müssen im initialen HTML vorhanden sein
+* keine zentrale Content-Ausgabe ausschließlich über Client-Side JavaScript
+* keine reine SPA
+* keine clientseitige Rendering-Abhängigkeit für SEO-relevante Inhalte
+
+Wenn du Next.js verwendest, nutze die App Router Architektur und Server Components, wo sinnvoll.
+
+Interaktive Elemente wie Formulare, Slider oder Menüs dürfen Client Components sein, aber der eigentliche SEO- und Conversion-Content muss serverseitig gerendert werden.
+
+Prüfe nach Fertigstellung explizit, dass die Landingpage auch bei deaktiviertem JavaScript die wesentlichen Inhalte ausliefert.
+
+---
+
+# 2. ZIEL DER LANDINGPAGE
+
+Die Seite wird primär über **Google Ads** beworben.
+
+Das wichtigste Ziel ist deshalb NICHT, möglichst viele Informationen darzustellen.
+
+Das wichtigste Ziel ist:
+
+## BESUCHER SOLLEN EINEN SCHADEN MELDEN.
+
+Primärer CTA auf der gesamten Seite:
+
+**„Jetzt kostenfrei starten“**
+
+NICHT:
+
+* „Kontakt anfragen“
+* „Kontakt aufnehmen“
+* „Mehr erfahren“
+* „Termin anfragen“
+
+Der primäre CTA soll immer heißen:
+
+**Jetzt kostenfrei starten**
+
+Der CTA soll auf das vorhandene bzw. zu integrierende Schadenmelde-/Online-Formular führen.
+
+Wenn die konkrete Ziel-URL des Formulars aus der bestehenden Website nicht eindeutig ermittelbar ist, lege die CTA-Ziel-URL als zentrale Konfiguration an, damit sie später problemlos geändert werden kann.
+
+---
+
+# 3. ZIELGRUPPE
+
+Primäre Zielgruppe:
+
+Menschen in **Kaiserslautern und Umgebung**, die gerade einen KFZ-Unfall hatten und einen unabhängigen KFZ-Sachverständigen benötigen.
+
+Typische Situation:
+
+* „Mir ist jemand ins Auto gefahren.“
+* „Ich hatte gerade einen Unfall.“
+* „Die Versicherung will den Schaden selbst begutachten.“
+* „Ich brauche ein Unfallgutachten.“
+* „Was ist mein Schaden wert?“
+* „Wer bezahlt den Gutachter?“
+* „Ich möchte meinen Schaden schnell regulieren lassen.“
+
+Die Landingpage muss den Besucher innerhalb weniger Sekunden davon überzeugen:
+
+1. Hier bin ich richtig.
+2. Ich muss mich um wenig kümmern.
+3. Der Service ist für mich als Unfallgeschädigten grundsätzlich kostenfrei, sofern die Voraussetzungen / Kostendeckung durch die Versicherung gegeben sind.
+4. Ich kann jetzt sofort starten.
+
+---
+
+# 4. POSITIONIERUNG
+
+Die Seite soll nicht wie eine klassische Unternehmenshomepage wirken.
+
+Sie soll wie eine **hochwertige Performance-Landingpage** wirken.
+
+Priorität:
+
+**Conversion > Information > Navigation**
+
+Kein unnötiger Ballast.
+
+Keine riesigen Menüs.
+
+Keine Ablenkungen.
+
+Keine übermäßigen Links nach außen.
+
+Der Besucher soll möglichst schnell zum CTA gelangen.
+
+---
+
+# 5. DESIGN
+
+Orientiere dich visuell stark an:
+
+**https://www.repaircheck.de**
+
+Insbesondere an:
+
+* modernem Premium-Look
+* sehr viel Weißraum
+* klarer Typografie
+* großen Headlines
+* starken CTA-Buttons
+* vertrauensbildenden Zahlen / Bewertungen
+* abgerundeten Karten
+* modernen Icons
+* professionellen KFZ-/Gutachter-Bildern
+* klarer visueller Hierarchie
+* hochwertigem Mobile Design
+
+Aber:
+
+**Kein Copy-Paste und kein 1:1-Klon von RepairCheck.**
+
+Das Design soll eigenständig wirken und zur Marke Schaden-Service24 passen.
+
+Verwende eine seriöse Farbwelt passend zu einem KFZ-Sachverständigen:
+
+* dunkle / seriöse Grundfarbe
+* Weiß
+* dezente neutrale Grautöne
+* eine klare Akzentfarbe für CTA-Buttons
+
+Die CTA-Farbe muss einen hohen Kontrast haben.
+
+---
+
+# 6. HERO SECTION
+
+Die Hero Section ist der wichtigste Bereich der gesamten Seite.
+
+Sie muss sofort vermitteln:
+
+**KFZ-Unfall → unabhängiger Gutachter → schnelle Hilfe → kostenfrei starten**
+
+Vorschlag für die inhaltliche Richtung:
+
+### H1:
+
+**Unfall in Kaiserslautern? Wir kümmern uns um Ihr Schadengutachten.**
+
+Alternative Variante, falls im Design stärker:
+
+**Unfall gehabt? Sichern Sie jetzt Ihre Ansprüche.**
+
+Darunter eine sehr klare Erklärung:
+
+**Als unabhängiger KFZ-Sachverständiger unterstützen wir Sie bei der Schadensbegutachtung und Schadensabwicklung. Für Unfallgeschädigte ist die Begutachtung bei entsprechender Kostendeckung durch die gegnerische Versicherung grundsätzlich kostenfrei.**
+
+CTA:
+
+**Jetzt kostenfrei starten**
+
+Sekundär:
+
+Telefonnummer klickbar:
+
+**06373 2093898**
+
+Darunter 3 kurze Trust Points, beispielsweise:
+
+* Unabhängige Schadensbegutachtung
+* Persönliche Betreuung
+* Schnelle Schadensabwicklung
+
+WICHTIG:
+
+Keine Aussagen erfinden.
+
+Nur Claims verwenden, die aus der bestehenden Website oder aus eindeutig vorgegebenen Informationen stammen.
+
+---
+
+# 7. GOOGLE-ADS-FIRST DESIGN
+
+Die Landingpage muss für Suchintentionen wie folgende optimiert sein:
+
+* KFZ Gutachter Kaiserslautern
+* Kfz Sachverständiger Kaiserslautern
+* Unfallgutachter Kaiserslautern
+* Unfall Gutachten Kaiserslautern
+* Schadengutachten Kaiserslautern
+* Kfz Gutachten nach Unfall
+* Gutachter nach Unfall
+* unabhängiger Kfz Gutachter
+* Unfallgutachter in meiner Nähe
+* Kfz Sachverständiger nach Unfall
+* Autounfall Gutachter Kaiserslautern
+
+Diese Begriffe natürlich verwenden.
+
+KEIN Keyword Stuffing.
+
+Die Texte müssen sich wie echte, überzeugende deutsche Texte lesen.
+
+---
+
+# 8. LOKALE SEO
+
+Die Seite soll gezielt auf:
+
+## Kaiserslautern
+
+optimiert werden.
+
+Verwende zusätzlich sinnvoll:
+
+* Kaiserslautern
+* Raum Kaiserslautern
+* Umgebung Kaiserslautern
+* Kaiserslautern und Umgebung
+* Westpfalz, sofern fachlich sinnvoll
+* umliegende Orte nur dann, wenn sie tatsächlich zum Einzugsgebiet gehören bzw. aus den bestehenden Informationen ableitbar sind
+
+Nicht künstlich 20 Ortsnamen in den Text werfen.
+
+Lokale SEO soll natürlich wirken.
+
+Erstelle einen starken Abschnitt:
+
+## Ihr KFZ-Gutachter in Kaiserslautern
+
+Hier soll erklärt werden, warum Kunden aus Kaiserslautern und Umgebung Schaden-Service24 kontaktieren können.
+
+---
+
+# 9. TRUST SECTION
+
+Nach der Hero Section soll sehr schnell Vertrauen aufgebaut werden.
+
+Nutze die vorhandenen Informationen der aktuellen Website.
+
+Mögliche Trust Points:
+
+* unabhängiger Sachverständiger
+* geprüfter Sachverständiger
+* fachgerechte Schadensbegutachtung
+* umfangreiches Leistungsangebot
+* kostenfreie Services für Unfallbeteiligte
+* persönliche Betreuung
+* Termine nach individueller Absprache
+
+Keine Zahlen erfinden.
+
+Keine Google-Bewertungen erfinden.
+
+Keine „10.000 Gutachten“, „15 Jahre Erfahrung“ etc. aus RepairCheck übernehmen, wenn diese nicht auf der aktuellen Website von Schaden-Service24 belegt sind.
+
+---
+
+# 10. PROBLEM → LÖSUNG SECTION
+
+Baue einen emotionalen Conversion-Abschnitt:
+
+## Unfall gehabt – was jetzt?
+
+Der Besucher soll sich verstanden fühlen.
+
+Behandle beispielsweise:
+
+* Unsicherheit nach dem Unfall
+* Schadenhöhe unklar
+* Versicherung möchte eigenen Gutachter schicken
+* Wertminderung wird möglicherweise übersehen
+* Nutzungsausfall wird möglicherweise nicht berücksichtigt
+* Reparaturkosten sind unklar
+
+Danach:
+
+## Wir schaffen Klarheit.
+
+Erkläre, dass ein unabhängiges Schadengutachten unter anderem folgende Punkte berücksichtigen kann:
+
+* Reparaturkosten
+* Wertminderung
+* Nutzungsausfall
+* Schadensumfang
+* ggf. weitere relevante Schadenspositionen
+
+Diese Inhalte basieren auf der aktuellen Website.
+
+---
+
+# 11. SERVICES
+
+Erstelle einen übersichtlichen Servicebereich.
+
+Primär:
+
+### Unfallgutachten
+
+Professionelle Begutachtung des Fahrzeugschadens nach einem Unfall.
+
+### KFZ-Schadensgutachten
+
+Dokumentation und Bewertung des Schadens.
+
+### Fahrzeugbewertung
+
+Bewertung von Fahrzeugen entsprechend den angebotenen Leistungen.
+
+### Oldtimer-Wertgutachten
+
+Bewertung von Oldtimern.
+
+### Schadensabwicklung
+
+Unterstützung rund um die weitere Schadensabwicklung.
+
+Zusätzlich können – sofern aus der bestehenden Website ableitbar – folgende Leistungen erwähnt werden:
+
+* Mietwagen
+* Abschleppdienst
+* Unterstützung durch Rechtsanwälte
+
+Diese Leistungen aber nicht so darstellen, als würde Schaden-Service24 selbst Rechtsberatung oder Abschleppleistungen durchführen, sofern dies nicht ausdrücklich belegt ist.
+
+---
+
+# 12. „WAS WIRD GEPRÜFT?“ SECTION
+
+Erstelle eine visuell starke Section:
+
+## Kein Schaden bleibt verborgen.
+
+Darunter Karten:
+
+### Reparaturkosten
+
+Welche Reparaturmaßnahmen sind erforderlich?
+
+### Wertminderung
+
+Hat das Fahrzeug durch den Unfall an Wert verloren?
+
+### Nutzungsausfall
+
+Welche Ansprüche können für die Ausfallzeit relevant sein?
+
+### Schadensumfang
+
+Welche Schäden sind tatsächlich entstanden?
+
+### Weitere Schadenspositionen
+
+Relevante Positionen werden im Rahmen der Begutachtung berücksichtigt.
+
+Keine rechtlich falschen Garantien formulieren.
+
+---
+
+# 13. ABLAUF
+
+Sehr simpel.
+
+## So einfach funktioniert es
+
+### 01 – Schaden melden
+
+Sie starten die Schadenmeldung online.
+
+### 02 – Schaden prüfen lassen
+
+Die notwendigen Informationen und Bilder werden aufgenommen und geprüft.
+
+### 03 – Gutachten erstellen lassen
+
+Ein Sachverständiger bewertet den Schaden.
+
+### 04 – Schadensabwicklung
+
+Die weiteren Schritte werden mit Ihnen abgestimmt.
+
+CTA danach:
+
+**Jetzt kostenfrei starten**
+
+---
+
+# 14. KOSTEN / „KOSTENFREI“-SECTION
+
+Diese Section ist extrem wichtig für Google Ads.
+
+Headline:
+
+## Was kostet mich ein Unfallgutachten?
+
+Klar und verständlich erklären:
+
+Wenn Sie unverschuldet in einen Verkehrsunfall verwickelt wurden, kann die gegnerische Haftpflichtversicherung die Kosten des unabhängigen Gutachters übernehmen.
+
+Daher ist der Service für Unfallgeschädigte unter den entsprechenden Voraussetzungen grundsätzlich kostenfrei.
+
+WICHTIG:
+
+Keine absolute Aussage wie „immer kostenlos“.
+
+Keine rechtliche Garantie.
+
+Nutze eine kleine Fußnote:
+
+**Kostenübernahme vorausgesetzt / abhängig vom jeweiligen Schadenfall und der Regulierung durch die Versicherung.**
+
+Der CTA direkt darunter:
+
+**Jetzt kostenfrei starten**
+
+---
+
+# 15. VERSICHERUNG / EIGENER GUTACHTER
+
+Erstelle einen starken Informationsabschnitt:
+
+## Sie dürfen Ihren Gutachter selbst wählen.
+
+Erkläre verständlich:
+
+Wenn Sie unverschuldet in einen Unfall verwickelt wurden, müssen Sie nicht einfach den von der gegnerischen Versicherung vorgeschlagenen Gutachter akzeptieren.
+
+Sie können einen unabhängigen Sachverständigen Ihrer Wahl beauftragen.
+
+Formuliere seriös und rechtlich vorsichtig.
+
+Keine aggressive Anti-Versicherung-Kommunikation.
+
+---
+
+# 16. REGIONALE POSITIONIERUNG
+
+Headline:
+
+## Ihr unabhängiger KFZ-Gutachter im Raum Kaiserslautern
+
+Text:
+
+Schaden-Service24 unterstützt Kunden im Raum Kaiserslautern bei der professionellen Begutachtung von Fahrzeugschäden und der weiteren Schadensabwicklung.
+
+Die aktuelle Unternehmensadresse lautet laut bestehender Website:
+
+**RCS Gries & Kahnert UG
+Saarpfalzstr. 55
+66914 Waldmohr**
+
+Diese Adresse nicht als „Kaiserslautern Standort“ bezeichnen.
+
+Stattdessen klar zwischen Unternehmenssitz und Einsatzgebiet unterscheiden.
+
+---
+
+# 17. KONTAKT
+
+Neue Kontaktdaten verwenden:
+
+**E-Mail: [info@schaden-service24.com](mailto:info@schaden-service24.com)**
+
+**Telefon: 06373 2093898**
+
+Die Telefonnummer muss klickbar sein:
+
+tel:063732093898
+
+E-Mail klickbar:
+
+mailto:info@schaden-service24.com
+
+Die alte E-Mail-Adresse
+
+**[info@reifencentersaar.de](mailto:info@reifencentersaar.de)**
+
+darf NICHT mehr auf der Landingpage verwendet werden.
+
+---
+
+# 18. CTA-STRATEGIE
+
+Der CTA:
+
+**Jetzt kostenfrei starten**
+
+muss mehrfach erscheinen.
+
+Mindestens:
+
+1. Hero
+2. nach Problem/Lösung
+3. nach Ablauf
+4. nach Kosten
+5. am Ende
+
+Optional Sticky CTA auf Mobile:
+
+**Jetzt kostenfrei starten**
+
+Zusätzlich eine klickbare Telefonnummer.
+
+Keine unterschiedlichen CTA-Bezeichnungen verwenden.
+
+Einheitlichkeit ist wichtig.
+
+---
+
+# 19. FAQ
+
+Erstelle einen SEO- und Conversion-starken FAQ-Bereich.
+
+Fragen beispielsweise:
+
+### Was kostet ein KFZ-Gutachten nach einem Unfall?
+
+### Wann brauche ich einen unabhängigen KFZ-Gutachter?
+
+### Wer bezahlt das Gutachten?
+
+### Kann ich meinen Gutachter selbst auswählen?
+
+### Muss ich zu Ihnen kommen?
+
+### Wie schnell kann mein Fahrzeug begutachtet werden?
+
+### Was wird bei einem Schadengutachten geprüft?
+
+### Was passiert nach dem Gutachten?
+
+### Kann ich den Schaden online melden?
+
+Die Antworten müssen auf den Informationen der bestehenden Website basieren.
+
+Keine erfundenen Fristen oder Garantien.
+
+Wenn eine konkrete Information nicht vorhanden ist, formuliere neutral oder lasse sie weg.
+
+---
+
+# 20. SEO META DATEN
+
+Erstelle passende Meta-Daten.
+
+Title beispielsweise:
+
+**KFZ Gutachter Kaiserslautern | Unfallgutachten & Schadengutachten**
+
+Meta Description beispielsweise:
+
+**Unfall in Kaiserslautern? Schaden-Service24 unterstützt Sie mit unabhängiger Schadensbegutachtung und Schadensabwicklung. Jetzt kostenfrei starten.**
+
+Die endgültige Formulierung darf verbessert werden.
+
+---
+
+# 21. STRUCTURED DATA
+
+Implementiere serverseitig auslieferbares Schema.org Markup.
+
+Mindestens prüfen:
+
+* LocalBusiness
+* AutomotiveBusiness, sofern passend
+* FAQPage
+* Organization
+
+Verwende nur tatsächlich bekannte Daten.
+
+Keine erfundenen Bewertungen oder Ratings in Structured Data.
+
+Wenn eine Adresse angegeben wird, muss sie die tatsächliche Unternehmensadresse sein.
+
+---
+
+# 22. TECHNISCHE SEO
+
+Implementiere:
+
+* SSR
+* saubere semantische HTML-Struktur
+* genau eine H1
+* logisch strukturierte H2/H3
+* Canonical URL
+* Meta Title
+* Meta Description
+* Open Graph
+* Twitter/X Card
+* robots.txt
+* sitemap.xml
+* schnelle Ladezeit
+* optimierte Bilder
+* moderne Bildformate
+* Lazy Loading unterhalb des sichtbaren Bereichs
+* keine unnötigen JavaScript-Bibliotheken
+* saubere interne Verlinkung
+* Mobile First
+* Core Web Vitals optimieren
+
+Die wichtigsten Inhalte müssen im initialen HTML vorhanden sein.
+
+---
+
+# 23. PERFORMANCE
+
+Die Seite ist eine Google-Ads-Landingpage.
+
+Performance ist deshalb kritisch.
+
+Ziel:
+
+* sehr schneller First Contentful Paint
+* sehr schneller Largest Contentful Paint
+* minimale JavaScript-Bundles
+* optimierte Bilder
+* keine unnötigen Animationen
+* keine schweren Libraries ohne Grund
+
+Hero-Bild priorisieren.
+
+Keine riesigen unkomprimierten Bilder laden.
+
+---
+
+# 24. MOBILE FIRST
+
+Ein großer Anteil der Google-Ads-Besucher wird mobil kommen.
+
+Mobile Design muss deshalb gleichwertig oder besser sein.
+
+Auf Mobile:
+
+* H1 gut lesbar
+* CTA sofort sichtbar
+* Telefonnummer direkt erreichbar
+* keine überladenen Navigationselemente
+* große Touch Targets
+* Formular einfach bedienbar
+* Sticky CTA möglich
+
+---
+
+# 25. BILDER
+
+Verwende hochwertige Bilder passend zu:
+
+* KFZ-Schadengutachter
+* beschädigtem Fahrzeug
+* Sachverständiger bei der Fahrzeugprüfung
+* Fahrzeugschaden
+* Gutachten / Dokumentation
+* Kaiserslautern / regionale Umgebung
+
+Aber:
+
+Keine beliebigen Stockfotos verwenden, die eine konkrete Person oder ein konkretes Unternehmen vortäuschen.
+
+Wenn Bilder von der bestehenden Website verwendet werden können, bevorzuge diese.
+
+Alle Bilder mit sinnvollen deutschen ALT-Tags versehen.
+
+Beispiele:
+
+„KFZ Sachverständiger bei der Schadensbegutachtung“
+
+„Unfallfahrzeug mit Frontschaden“
+
+„KFZ Gutachter im Raum Kaiserslautern“
+
+---
+
+# 26. CONVERSION PSYCHOLOGY
+
+Die Landingpage muss psychologisch sauber aufgebaut sein:
+
+### Aufmerksamkeit
+
+Unfall + Kaiserslautern + Gutachter
+
+↓
+
+### Vertrauen
+
+Unabhängig + professionell + persönliche Betreuung
+
+↓
+
+### Risikoreduktion
+
+Kostenfrei bei entsprechender Kostendeckung
+
+↓
+
+### Einfachheit
+
+Online starten
+
+↓
+
+### Social Proof
+
+Nur echte vorhandene Bewertungen verwenden, falls verfügbar
+
+↓
+
+### CTA
+
+Jetzt kostenfrei starten
+
+Der Besucher soll niemals überlegen müssen:
+
+„Was soll ich hier eigentlich machen?“
+
+Die Antwort muss immer klar sein:
+
+**Jetzt kostenfrei starten.**
+
+---
+
+# 27. KEINE KLASSISCHE HOMEPAGE
+
+Wichtig:
+
+Dies ist KEINE normale Unternehmenshomepage.
+
+Vermeide:
+
+* große Navigation mit 10 Unterseiten
+* unnötige Unternehmensgeschichte
+* lange Über-uns-Texte
+* zu viele externe Links
+* unnötige Blog-Teaser
+* Ablenkung vom CTA
+
+Die Landingpage darf trotzdem genügend Informationen für Vertrauen und SEO enthalten.
+
+---
+
+# 28. HEADER
+
+Minimalistischer Header.
+
+Logo:
+
+**Schaden-Service24**
+
+Links maximal wenige relevante Navigationselemente.
+
+Rechts:
+
+Telefonnummer
+
+und prominenter CTA:
+
+**Jetzt kostenfrei starten**
+
+Auf Mobile:
+
+Logo + CTA / Menü.
+
+---
+
+# 29. FOOTER
+
+Enthalten:
+
+Schaden-Service24 / Unternehmensname gemäß bestehender Website
+
+RCS Gries & Kahnert UG
+
+Saarpfalzstr. 55
+
+66914 Waldmohr
+
+Telefon:
+
+06373 2093898
+
+E-Mail:
+
+[info@schaden-service24.com](mailto:info@schaden-service24.com)
+
+Zusätzlich:
+
+* Impressum
+* Datenschutz
+
+Falls diese Seiten bereits vorhanden sind, korrekt verlinken.
+
+---
+
+# 30. RECHTLICHE SICHERHEIT
+
+Keine erfundenen Aussagen.
+
+Insbesondere nicht automatisch behaupten:
+
+* „100 % kostenlos“
+* „100 % Versicherung übernimmt“
+* „Geld innerhalb von X Tagen“
+* „Garantie“
+* „immer kostenlos“
+* „rechtlich garantiert“
+* „zertifiziert“, wenn nicht belegt
+* „X Jahre Erfahrung“, wenn nicht belegt
+* „X Gutachten“, wenn nicht belegt
+
+Wenn Aussagen der bestehenden Website übernommen werden, inhaltlich korrekt und möglichst vorsichtig formulieren.
+
+---
+
+# 31. GOOGLE ADS MESSAGE MATCH
+
+Die Landingpage soll besonders gut mit Anzeigen funktionieren.
+
+Beispiel Google-Ad:
+
+**KFZ Gutachter Kaiserslautern**
+Unfall gehabt? Jetzt unabhängigen Gutachter beauftragen.
+Schaden online melden und kostenfrei starten.*
+
+Wenn ein Nutzer auf eine Anzeige mit „KFZ Gutachter Kaiserslautern“ klickt, muss er im Hero unmittelbar erkennen:
+
+**KFZ Gutachter + Kaiserslautern + Unfall + kostenfrei starten**
+
+Das erhöht die Message-Match-Qualität und die Conversion Rate.
+
+---
+
+# 32. TRACKING VORBEREITEN
+
+Bereite die Seite technisch für Tracking vor.
+
+CTA-Klicks müssen eindeutig messbar sein.
+
+Events vorbereiten für:
+
+* CTA „Jetzt kostenfrei starten“
+* Telefon-Klick
+* E-Mail-Klick
+* Formular gestartet
+* Formular abgeschickt
+
+Google Ads Conversion Tracking / Google Tag Manager so integrieren, dass Tracking IDs später über Environment Variables oder eine zentrale Config eingetragen werden können.
+
+Noch keine erfundenen Tracking IDs einbauen.
+
+---
+
+# 33. CODE-QUALITÄT
+
+Der Code muss sauber strukturiert sein.
+
+Komponenten sinnvoll aufteilen:
+
+* Header
+* Hero
+* TrustBar
+* ProblemSection
+* Services
+* Benefits
+* Process
+* CostSection
+* LocalSEOSection
+* FAQ
+* FinalCTA
+* Footer
+
+SEO-relevanter Text nicht unnötig in Client Components packen.
+
+---
+
+# 34. ABSCHLIESSENDER TEST
+
+Nach Implementierung selbst prüfen:
+
+1. Wird die Seite serverseitig gerendert?
+2. Ist der komplette SEO-Content im initialen HTML?
+3. Gibt es genau eine H1?
+4. Ist „Kaiserslautern“ sinnvoll im Content vorhanden?
+5. Ist „KFZ Gutachter“ sinnvoll vorhanden?
+6. Ist „Unfallgutachten“ sinnvoll vorhanden?
+7. Funktioniert der CTA?
+8. Heißt der CTA überall „Jetzt kostenfrei starten“?
+9. Ist die Telefonnummer korrekt?
+10. Ist die E-Mail korrekt?
+11. Ist die alte E-Mail-Adresse vollständig entfernt?
+12. Sind keine erfundenen Claims enthalten?
+13. Sind Mobile und Desktop sauber?
+14. Ist die Seite schnell?
+15. Sind Title und Meta Description gesetzt?
+16. Funktioniert sitemap.xml?
+17. Funktioniert robots.txt?
+18. Sind strukturierte Daten vorhanden?
+19. Gibt es keine kaputten Links?
+20. Ist der CTA auf Mobile sofort sichtbar?
+
+---
+
+# 35. WICHTIGSTE PRIORITÄT
+
+Wenn du zwischen zusätzlichem Inhalt und einer höheren Conversion Rate entscheiden musst:
+
+**Conversion Rate gewinnt.**
+
+Die Seite soll nicht versuchen, alles über das Unternehmen zu erzählen.
+
+Sie soll einen Menschen, der gerade nach
+
+**„KFZ Gutachter Kaiserslautern“**
+
+sucht, davon überzeugen:
+
+**„Das ist genau der richtige Ansprechpartner. Ich kann hier jetzt direkt und ohne unnötiges Risiko starten.“**
+
+Baue die Landingpage jetzt vollständig als produktionsfähige SSR-Webseite.

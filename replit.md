@@ -1,6 +1,18 @@
-# [Project name]
+# Schaden-Service24 Landingpage
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Hochkonvertierende Google-Ads-Landingpage für Schaden-Service24, einen unabhängigen KFZ-Sachverständigen im Raum Kaiserslautern (RCS Gries & Kahnert UG, Waldmohr).
+
+## Product
+
+- Single-page Landingpage (`artifacts/landingpage`, Route `/`), rein frontend, kein Backend.
+- Primärer CTA überall: "Jetzt kostenfrei starten" → `CTA_URL` in `artifacts/landingpage/src/config.ts` (aktuell Formular auf rcs.stageberry.net); Telefon 06373 2093898, E-Mail info@schaden-service24.com.
+- CI: Weiß + Markenblau #015A9D, CTA-Akzent Orange.
+- SEO: Title/Meta/OG/JSON-LD statisch in `index.html`, robots.txt + sitemap.xml in `public/`.
+- Tracking-Vorbereitung: `src/lib/tracking.ts` pusht Events (cta_click, phone_click, email_click) in `window.dataLayer`; keine IDs eingetragen.
+
+## Gotchas (project-specific)
+
+- Keine erfundenen Claims/Zahlen/Bewertungen verwenden (rechtliche Vorgabe des Users); alte E-Mail info@reifencentersaar.de darf nirgends auftauchen.
 
 ## Run & Operate
 
