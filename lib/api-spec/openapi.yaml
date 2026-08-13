@@ -10,6 +10,10 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: Storage
+    description: Object storage upload and serving endpoints.
+  - name: Claims
+    description: Schadenmeldungen (damage claim submissions).
 paths:
   /healthz:
     get:
@@ -24,6 +28,97 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /claims:
+    post:
+      tags: [Claims]
+      operationId: createClaim
+      summary: Submit a damage claim (Schadenmeldung)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ClaimInput"
+      responses:
+        "201":
+          description: Claim created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Claim"
+        "400":
+          description: Invalid request body.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+  /storage/uploads/request-url:
+    post:
+      tags: [Storage]
+      operationId: requestUploadUrl
+      summary: Request a presigned URL for file upload
+      description: |
+        Returns a presigned GCS URL for direct upload. The client sends JSON
+        metadata here, then uploads the file directly to the returned URL.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UploadUrlRequest"
+      responses:
+        "200":
+          description: Presigned upload URL generated.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UploadUrlResponse"
+        "400":
+          description: Missing or invalid required fields.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "500":
+          description: Failed to generate upload URL.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+  /storage/objects/{objectPath}:
+    get:
+      tags: [Storage]
+      operationId: getStorageObject
+      summary: Serve an object entity from PRIVATE_OBJECT_DIR
+      description: |
+        Serves object entities uploaded via presigned URLs.
+      parameters:
+        - name: objectPath
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Object path within the private object dir (e.g. `uploads/some-uuid`).
+      responses:
+        "200":
+          description: Object content streamed with correct Content-Type.
+          content:
+            "*/*":
+              schema:
+                type: string
+                format: binary
+        "404":
+          description: Object not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
+        "500":
+          description: Failed to serve object.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorEnvelope"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +128,127 @@ components:
           type: string
       required:
         - status
-
+    ClaimInput:
+      type: object
+      required: [faultParty, description, photoPaths, firstName, email, phone, postalCode, consent]
+      properties:
+        faultParty:
+          type: string
+          enum: [other, self]
+          description: Who caused the accident.
+        description:
+          type: string
+          minLength: 1
+          description: Damage description.
+        photoPaths:
+          type: array
+          maxItems: 10
+          items:
+            type: string
+            maxLength: 200
+          description: Object paths of uploaded damage photos.
+        firstName:
+          type: string
+          minLength: 1
+          maxLength: 200
+        email:
+          type: string
+          format: email
+          maxLength: 320
+        phone:
+          type: string
+          minLength: 5
+        postalCode:
+          type: string
+          minLength: 4
+        accidentDate:
+          type: string
+        accidentTime:
+          type: string
+        accidentLocation:
+          type: string
+        opponentInfo:
+          type: string
+        preferredDate:
+          type: string
+        preferredTimeSlot:
+          type: string
+          enum: [vormittags, nachmittags, ganztags]
+        consent:
+          type: boolean
+          enum: [true]
+          description: Consent to privacy policy (must be true).
+    Claim:
+      type: object
+      required: [id, faultParty, description, photoPaths, firstName, email, phone, postalCode, consent, createdAt]
+      properties:
+        id:
+          type: integer
+        faultParty:
+          type: string
+        description:
+          type: string
+        photoPaths:
+          type: array
+          items:
+            type: string
+        firstName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        postalCode:
+          type: string
+        accidentDate:
+          type: [string, "null"]
+        accidentTime:
+          type: [string, "null"]
+        accidentLocation:
+          type: [string, "null"]
+        opponentInfo:
+          type: [string, "null"]
+        preferredDate:
+          type: [string, "null"]
+        preferredTimeSlot:
+          type: [string, "null"]
+        consent:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+    UploadUrlRequest:
+      type: object
+      required: [name, size, contentType]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          description: Original file name.
+        size:
+          type: integer
+          minimum: 1
+          description: File size in bytes.
+        contentType:
+          type: string
+          minLength: 1
+          description: MIME type of the file (e.g. `image/jpeg`).
+    UploadUrlResponse:
+      type: object
+      required: [uploadURL, objectPath]
+      properties:
+        uploadURL:
+          type: string
+          format: uri
+          description: Presigned GCS URL for PUT upload.
+        objectPath:
+          type: string
+          description: Normalized object path (e.g. `/objects/uploads/uuid`).
+        metadata:
+          $ref: "#/components/schemas/UploadUrlRequest"
+    ErrorEnvelope:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string

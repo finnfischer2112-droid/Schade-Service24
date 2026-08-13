@@ -16,3 +16,11 @@ export function trackEvent(eventName: string, eventParams?: Record<string, any>)
     }
   }
 }
+
+export function trackFunnelStep(stepName: string, stepNumber: number) {
+  trackEvent('funnel_step', { step_name: stepName, step_number: stepNumber });
+}
+
+export function trackFormSubmitted() {
+  trackEvent('form_submitted');
+}
