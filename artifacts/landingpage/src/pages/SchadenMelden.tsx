@@ -558,9 +558,7 @@ export default function SchadenMelden() {
       {/* Minimal Header */}
       <header className="bg-background sticky top-0 z-50 border-b border-border/40 shadow-sm h-16 sm:h-20 flex items-center px-4 sm:px-6 justify-between">
         <Link href="/" className="flex items-center space-x-2 group">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-            <span className="font-bold text-base sm:text-xl leading-none">24</span>
-          </div>
+          <img src="/logo.png" alt="Schaden-Service24 Logo" className="h-9 sm:h-10 w-auto group-hover:scale-105 transition-transform" />
           <span className="font-bold text-lg sm:text-xl tracking-tight text-foreground hidden sm:block">
             Schaden-Service<span className="text-primary">24</span>
           </span>

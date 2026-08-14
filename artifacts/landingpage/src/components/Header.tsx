@@ -9,9 +9,7 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between max-w-6xl">
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
-              <span className="font-bold text-xl leading-none">24</span>
-            </div>
+            <img src="/logo.png" alt="Schaden-Service24 Logo" className="h-10 w-auto group-hover:scale-105 transition-transform" />
             <span className="hidden sm:inline font-bold text-xl tracking-tight text-foreground">
               Schaden-Service<span className="text-primary">24</span>
             </span>
