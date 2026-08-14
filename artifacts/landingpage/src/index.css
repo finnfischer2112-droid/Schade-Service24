@@ -56,8 +56,8 @@
   --popover-foreground: 0 0% 11%;
   --popover-border: 35 15% 88%;
 
-  /* Indigo-blue #575ECF → HSL(237, 56%, 58%) */
-  --primary: 237 56% 58%;
+  /* #2A67BB → HSL(215, 63%, 45%) */
+  --primary: 215 63% 45%;
   --primary-foreground: 0 0% 100%;
 
   /* Warm cream secondary (#dcdad5 range) */
@@ -67,8 +67,8 @@
   --muted: 35 15% 92%;
   --muted-foreground: 0 0% 45%;
 
-  /* Accent = same indigo (no more orange) */
-  --accent: 237 56% 58%;
+  /* Accent = same blue */
+  --accent: 215 63% 45%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
@@ -76,7 +76,7 @@
 
   --border: 35 12% 87%;
   --input: 35 12% 87%;
-  --ring: 237 56% 58%;
+  --ring: 215 63% 45%;
   
   --radius: 0.5rem;
 }
