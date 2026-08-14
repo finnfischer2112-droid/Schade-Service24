@@ -44,37 +44,41 @@
 }
 
 :root {
+  /* Near-black foreground like reference (#1b1b1b) */
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --foreground: 0 0% 11%;
 
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --card-border: 214 32% 91%;
+  --card-foreground: 0 0% 11%;
+  --card-border: 35 15% 88%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --popover-border: 214 32% 91%;
+  --popover-foreground: 0 0% 11%;
+  --popover-border: 35 15% 88%;
 
-  --primary: 206 99% 31%; /* #015A9D */
+  /* Indigo-blue #575ECF → HSL(237, 56%, 58%) */
+  --primary: 237 56% 58%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
+  /* Warm cream secondary (#dcdad5 range) */
+  --secondary: 35 18% 93%;
+  --secondary-foreground: 0 0% 11%;
 
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
+  --muted: 35 15% 92%;
+  --muted-foreground: 0 0% 45%;
 
-  --accent: 27 100% 50%; /* High contrast CTA color */
+  /* Accent = same indigo (no more orange) */
+  --accent: 237 56% 58%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 206 99% 31%;
+  --border: 35 12% 87%;
+  --input: 35 12% 87%;
+  --ring: 237 56% 58%;
   
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 }
 
 @layer base {

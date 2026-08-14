@@ -37,6 +37,10 @@ export function WhatWeCheck() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           <div className="lg:col-span-5 space-y-6">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-0.5 bg-white/40"></div>
+              <span className="text-xs font-bold uppercase tracking-widest text-white/60">Begutachtung</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
               Kein Schaden bleibt verborgen.
             </h2>

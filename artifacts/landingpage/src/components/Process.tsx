@@ -25,9 +25,14 @@ export function Process() {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-secondary/60">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-8 h-0.5 bg-primary"></div>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Ablauf</span>
+            <div className="w-8 h-0.5 bg-primary"></div>
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
             So einfach funktioniert es
           </h2>
@@ -35,11 +40,11 @@ export function Process() {
 
         <div className="grid md:grid-cols-4 gap-8 mb-16 relative">
           {/* Connecting line for desktop */}
-          <div className="hidden md:block absolute top-8 left-12 right-12 h-0.5 bg-border -z-10"></div>
+          <div className="hidden md:block absolute top-7 left-12 right-12 h-0.5 bg-border -z-10"></div>
           
           {steps.map((step, i) => (
             <div key={i} className="relative flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center text-xl font-bold shadow-lg mb-6 ring-8 ring-background">
+              <div className="w-14 h-14 rounded-xl bg-primary text-white flex items-center justify-center text-lg font-bold shadow-md mb-6 ring-8 ring-background">
                 {step.num}
               </div>
               <h3 className="font-bold text-xl mb-3">{step.title}</h3>

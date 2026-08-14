@@ -42,9 +42,14 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-8 h-0.5 bg-primary"></div>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">FAQ</span>
+            <div className="w-8 h-0.5 bg-primary"></div>
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
             Häufig gestellte Fragen
           </h2>

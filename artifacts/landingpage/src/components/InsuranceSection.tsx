@@ -15,8 +15,12 @@ export function InsuranceSection() {
           </div>
           
           <div className="order-1 md:order-2 space-y-6">
-            <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
-              <Scale className="w-7 h-7" />
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-8 h-0.5 bg-primary"></div>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">Ihr Recht</span>
+            </div>
+            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+              <Scale className="w-6 h-6" />
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
               Sie dürfen Ihren Gutachter selbst wählen.

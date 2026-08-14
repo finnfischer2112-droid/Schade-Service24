@@ -10,12 +10,12 @@ export function CTAButton({ className, onClick, ...props }: React.ComponentProps
   };
 
   return (
-    <Link 
+    <Link
       href="/schaden-melden"
       onClick={handleClick}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-base font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
-        "bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-[1.02] shadow-lg hover:shadow-xl active:scale-[0.98]",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-base font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        "bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] shadow-lg hover:shadow-xl active:scale-[0.98]",
         "h-14 px-8 py-4",
         className
       )}
@@ -26,4 +26,3 @@ export function CTAButton({ className, onClick, ...props }: React.ComponentProps
     </Link>
   );
 }
-

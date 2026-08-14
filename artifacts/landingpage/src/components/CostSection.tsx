@@ -3,11 +3,16 @@ import { HelpCircle } from 'lucide-react';
 
 export function CostSection() {
   return (
-    <section className="py-24 bg-secondary">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="bg-background rounded-3xl p-8 md:p-16 shadow-2xl border border-border text-center">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8 text-primary">
-            <HelpCircle className="w-8 h-8" />
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="w-8 h-0.5 bg-primary"></div>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Kosten</span>
+            <div className="w-8 h-0.5 bg-primary"></div>
+          </div>
+          <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary">
+            <HelpCircle className="w-7 h-7" />
           </div>
           
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">

@@ -9,17 +9,17 @@ export function TrustBar() {
   ];
 
   return (
-    <section className="bg-primary py-12 border-y border-primary-foreground/10">
+    <section className="bg-[#0d0d1a] border-y border-white/5 py-10">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {points.map((point, i) => (
-            <div key={i} className="flex flex-col items-center text-center space-y-3 animate-in fade-in slide-in-from-bottom-4" style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}>
-              <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-white backdrop-blur-sm">
-                <point.icon className="w-7 h-7" />
+            <div key={i} className="flex flex-col items-center text-center space-y-3" style={{ animationDelay: `${i * 100}ms` }}>
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                <point.icon className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-bold text-white text-lg">{point.title}</h3>
-                <p className="text-primary-foreground/80 text-sm font-medium">{point.desc}</p>
+                <h3 className="font-bold text-white text-base">{point.title}</h3>
+                <p className="text-white/55 text-sm font-medium">{point.desc}</p>
               </div>
             </div>
           ))}

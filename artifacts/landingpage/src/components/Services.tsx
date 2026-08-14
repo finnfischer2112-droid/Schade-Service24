@@ -38,6 +38,11 @@ export function Services() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-8 h-0.5 bg-primary"></div>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Leistungen</span>
+            <div className="w-8 h-0.5 bg-primary"></div>
+          </div>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
             Umfangreiches Leistungsangebot
           </h2>
@@ -46,11 +51,11 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
-            <div key={i} className="group bg-secondary/50 rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-border duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
-                <service.icon className="w-8 h-8" />
+            <div key={i} className="group bg-secondary/60 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-border duration-300">
+              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                <service.icon className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-muted-foreground leading-relaxed">
