@@ -77,6 +77,20 @@ services:
       - key: CORS_ORIGIN
         value: https://schaden-service24.com   # ← update when domain is connected
 
+      # SMTP – Host Europe email notifications for new claims
+      - key: SMTP_HOST
+        value: smtp.hosteurope.de
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        value: info@schaden-service24.com
+      - key: SMTP_FROM
+        value: info@schaden-service24.de
+      - key: SMTP_TO
+        value: info@schaden-service24.de
+      - key: SMTP_PASSWORD
+        sync: false   # set manually in Render dashboard → Environment
+
     healthCheckPath: /api/health   # add a GET /api/health route (see DEPLOY.md)
     # NOTE: preDeployCommand (DB migrations) is not supported on the free plan.
     # Run migrations manually once after first deploy (see DEPLOY.md step 5).

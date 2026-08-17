@@ -6,6 +6,7 @@ import {
   ObjectNotFoundError,
   ObjectStorageService,
 } from "../lib/objectStorage";
+import { sendClaimNotification } from "../lib/mailer";
 
 const router: IRouter = Router();
 const objectStorageService = new ObjectStorageService();
@@ -62,6 +63,22 @@ router.post("/claims", claimLimiter, async (req, res): Promise<void> => {
       .returning();
 
     req.log.info({ claimId: claim.id }, "New damage claim submitted");
+
+    // Send email notification — fire-and-forget, never blocks the response
+    sendClaimNotification({
+      firstName: claim.firstName,
+      email: claim.email,
+      phone: claim.phone,
+      postalCode: claim.postalCode,
+      faultParty: claim.faultParty,
+      description: claim.description,
+      accidentDate: claim.accidentDate,
+      accidentLocation: claim.accidentLocation,
+      opponentInfo: claim.opponentInfo,
+      preferredDate: claim.preferredDate,
+      preferredTimeSlot: claim.preferredTimeSlot,
+      photoPaths: verifiedPhotoPaths,
+    }).catch((err) => req.log.error({ err }, "Failed to send claim notification email"));
 
     res.status(201).json(CreateClaimResponse.parse(claim));
   } catch (error) {
