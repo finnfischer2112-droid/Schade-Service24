@@ -7,6 +7,7 @@ import { WhatWeCheck } from '@/components/WhatWeCheck';
 import { Process } from '@/components/Process';
 import { CostSection } from '@/components/CostSection';
 import { InsuranceSection } from '@/components/InsuranceSection';
+import { SeoContent } from '@/components/SeoContent';
 import { LocalSEOSection } from '@/components/LocalSEOSection';
 import { FAQ } from '@/components/FAQ';
 import { FinalCTA } from '@/components/FinalCTA';
@@ -25,6 +26,7 @@ export default function Home() {
         <WhatWeCheck />
         <Process />
         <CostSection />
+        <SeoContent />
         <InsuranceSection />
         <LocalSEOSection />
         <FAQ />

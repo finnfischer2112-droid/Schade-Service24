@@ -22,7 +22,7 @@ export function InsuranceSection() {
             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
               <Scale className="w-6 h-6" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight heading-gradient">
               Sie dürfen Ihren Gutachter selbst wählen.
             </h2>
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">

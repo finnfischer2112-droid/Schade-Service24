@@ -33,7 +33,7 @@ export function Process() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Ablauf</span>
             <div className="w-8 h-0.5 bg-primary"></div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight heading-gradient">
             So einfach funktioniert es
           </h2>
         </div>

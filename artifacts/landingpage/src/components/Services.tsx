@@ -43,7 +43,7 @@ export function Services() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Leistungen</span>
             <div className="w-8 h-0.5 bg-primary"></div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 heading-gradient">
             Umfangreiches Leistungsangebot
           </h2>
           <p className="text-lg text-muted-foreground">

@@ -81,6 +81,34 @@
   --radius: 0.5rem;
 }
 
+@utility heading-gradient {
+  color: #2a67bb;
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    background-image: linear-gradient(105deg, #17406e 0%, #2a67bb 55%, #4d8ede 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @media (forced-colors: active) {
+    background-image: none;
+    color: CanvasText;
+  }
+}
+
+@utility heading-gradient-light {
+  color: #ffffff;
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    background-image: linear-gradient(105deg, #ffffff 0%, #dcebff 45%, #a8ccf5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @media (forced-colors: active) {
+    background-image: none;
+    color: CanvasText;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;

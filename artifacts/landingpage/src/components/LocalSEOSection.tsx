@@ -11,7 +11,7 @@ export function LocalSEOSection() {
           <MapPin className="w-8 h-8" />
         </div>
         
-        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
+        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 heading-gradient-light">
           Ihr unabhängiger KFZ-Gutachter im Raum Kaiserslautern
         </h2>
         

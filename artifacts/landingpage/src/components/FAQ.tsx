@@ -8,36 +8,44 @@ import {
 export function FAQ() {
   const faqs = [
     {
-      q: "Was kostet ein KFZ-Gutachten nach einem Unfall?",
-      a: "Wenn Sie unverschuldet in einen Verkehrsunfall verwickelt wurden, kann die gegnerische Haftpflichtversicherung die Kosten des unabhängigen Gutachters übernehmen. Daher ist der Service für Unfallgeschädigte unter den entsprechenden Voraussetzungen grundsätzlich kostenfrei."
+      q: "Wann sollte ich einen KFZ Gutachter in Kaiserslautern beauftragen?",
+      a: "Ein KFZ Gutachter kann insbesondere bei umfangreicheren Unfallschäden sinnvoll sein. Er kann den Fahrzeugschaden fachlich aufnehmen, dokumentieren und die relevanten Informationen in einem Gutachten zusammenführen."
     },
     {
-      q: "Kann ich meinen Gutachter selbst auswählen?",
-      a: "Ja. Wenn Sie unverschuldet in einen Unfall verwickelt wurden, müssen Sie nicht einfach den von der gegnerischen Versicherung vorgeschlagenen Gutachter akzeptieren. Sie können einen unabhängigen Sachverständigen Ihrer Wahl beauftragen."
+      q: "Was macht ein KFZ Gutachter in Kaiserslautern?",
+      a: "Ein KFZ Gutachter besichtigt das beschädigte Fahrzeug, erfasst die festgestellten Schäden und nimmt eine technische Einschätzung des Schadenumfangs vor. Die Ergebnisse können anschließend in einem Gutachten dokumentiert werden."
     },
     {
-      q: "Wer bezahlt das Gutachten?",
-      a: "Bei einem unverschuldeten Unfall trägt grundsätzlich die gegnerische Haftpflichtversicherung die Gutachterkosten. (Kostenübernahme vorausgesetzt und abhängig vom jeweiligen Schadenfall)."
+      q: "Was ist ein KFZ Gutachten in Kaiserslautern?",
+      a: "Ein KFZ-Gutachten dokumentiert den Zustand eines Fahrzeugs und die festgestellten Unfallschäden. Je nach Schaden können unter anderem Fahrzeugdaten, Schadensumfang und erforderliche Reparaturarbeiten berücksichtigt werden."
     },
     {
-      q: "Muss ich zu Ihnen kommen?",
-      a: "Nein, nicht zwingend. Wir bieten Termine nach individueller Absprache an und begutachten das Fahrzeug gerne vor Ort im Raum Kaiserslautern und Umgebung."
+      q: "Wann ist ein Unfallgutachten in Kaiserslautern sinnvoll?",
+      a: "Ob ein Unfallgutachten sinnvoll ist, hängt von der jeweiligen Unfallsituation und dem Umfang des Fahrzeugschadens ab. Bei umfangreicheren Schäden kann eine detaillierte fachliche Dokumentation für die weitere Schadensabwicklung relevant sein."
     },
     {
-      q: "Wie schnell kann mein Fahrzeug begutachtet werden?",
-      a: "Wir legen großen Wert auf eine schnelle Schadensabwicklung. Eine Begutachtung erfolgt zeitnah nach individueller Absprache."
+      q: "Welche Informationen benötigt ein KFZ Sachverständiger?",
+      a: "Hilfreich sind unter anderem Fahrzeugdaten, Informationen zum Unfallhergang, vorhandene Unfallunterlagen und gegebenenfalls Fotos des Schadens. Auch bekannte Vorschäden sollten angegeben werden."
     },
     {
-      q: "Was wird bei einem Schadengutachten geprüft?",
-      a: "Wir prüfen alle relevanten Faktoren: Reparaturkosten, eine mögliche Wertminderung, Ihren Anspruch auf Nutzungsausfall, den exakten Schadensumfang und weitere relevante Schadenspositionen."
+      q: "Können auch nicht sichtbare Schäden berücksichtigt werden?",
+      a: "Bei der Begutachtung wird das Fahrzeug fachlich untersucht und der festgestellte Schaden dokumentiert. Je nach Unfallgeschehen können neben sichtbaren Beschädigungen auch weitere technische Bereiche relevant sein."
     },
     {
-      q: "Was passiert nach dem Gutachten?",
-      a: "Das erstellte Gutachten dient als Grundlage für die Regulierung mit der Versicherung. Wir unterstützen Sie rund um die weitere Schadensabwicklung."
+      q: "Was sollte ich bei der Auswahl eines KFZ Sachverständigen in Kaiserslautern beachten?",
+      a: "Achten Sie auf eine nachvollziehbare Arbeitsweise, strukturierte Dokumentation, verständliche Kommunikation und fachliche Erfahrung mit unterschiedlichen Fahrzeugen und Schadenssituationen."
     },
     {
-      q: "Kann ich den Schaden online melden?",
-      a: "Ja, Sie können die Schadenmeldung jederzeit online über unsere Website starten."
+      q: "Was kann ein Unfallgutachten dokumentieren?",
+      a: "Ein Unfallgutachten kann unter anderem Fahrzeugdaten, festgestellte Beschädigungen, technische Einschätzungen und den erforderlichen Reparaturumfang dokumentieren. Die konkreten Inhalte hängen vom jeweiligen Fahrzeug und Schaden ab."
+    },
+    {
+      q: "Welche weiteren Leistungen können nach einem Unfall erforderlich sein?",
+      a: "Neben der Begutachtung können je nach Situation beispielsweise ein Abschleppdienst, ein Mietwagen, eine Werkstatt oder rechtliche Unterstützung relevant sein. Welche Maßnahmen erforderlich sind, hängt vom konkreten Unfall ab."
+    },
+    {
+      q: "Wer bietet KFZ Gutachten in Kaiserslautern an?",
+      a: "Schaden-Service24 mit KFZ-Sachverständigem Matthias Kahnert bietet Unfallgutachten für KFZ und NFZ sowie weitere Dienstleistungen rund um die Schadensabwicklung an. Dazu gehören unter anderem die Vermittlung beziehungsweise Einbindung von Mietwagen, Abschleppdiensten, Werkstätten und Rechtsanwälten."
     }
   ];
 
@@ -50,8 +58,8 @@ export function FAQ() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary">FAQ</span>
             <div className="w-8 h-0.5 bg-primary"></div>
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
-            Häufig gestellte Fragen
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4 heading-gradient">
+            KFZ Gutachter Kaiserslautern FAQs
           </h2>
           <p className="text-lg text-muted-foreground">
             Hier finden Sie Antworten auf die wichtigsten Fragen nach einem Unfall.

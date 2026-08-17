@@ -29,14 +29,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-            Unfall in Kaiserslautern?{' '}
-            <span className="text-primary block mt-2">
-              Wir kümmern uns um Ihr Schadengutachten.
+            KFZ Gutachter Kaiserslautern:{' '}
+            <span className="heading-gradient-light block mt-2">
+              Was ist nach einem Unfall wichtig?
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/75 leading-relaxed max-w-xl mb-10">
-            Als unabhängiger KFZ-Sachverständiger unterstützen wir Sie bei der Schadensbegutachtung und Schadensabwicklung. Für Unfallgeschädigte ist die Begutachtung bei entsprechender Kostendeckung durch die gegnerische Versicherung grundsätzlich kostenfrei.
+          <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-10">
+            Ein Unfall mit dem eigenen Fahrzeug wirft häufig viele Fragen auf. Wie groß ist der tatsächliche Schaden? Welche Reparaturen sind erforderlich? Und welche Unterlagen werden für die weitere Schadensabwicklung benötigt? Gerade bei einem größeren Fahrzeugschaden reicht eine erste Einschätzung von außen oft nicht aus. Ein KFZ Gutachter kann den Schaden fachlich erfassen, dokumentieren und die relevanten Fahrzeug- und Schadensdaten in einem Gutachten zusammenführen. Für Fahrzeughalter in Kaiserslautern und Umgebung kann eine strukturierte Begutachtung daher ein wichtiger Schritt nach einem Unfall sein. Dabei kommt es darauf an, den individuellen Schaden nachvollziehbar zu erfassen und die weitere Abwicklung auf eine dokumentierte Grundlage zu stellen.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">

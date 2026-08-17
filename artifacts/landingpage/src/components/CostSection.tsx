@@ -15,7 +15,7 @@ export function CostSection() {
             <HelpCircle className="w-7 h-7" />
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 heading-gradient">
             Was kostet mich ein Unfallgutachten?
           </h2>
           

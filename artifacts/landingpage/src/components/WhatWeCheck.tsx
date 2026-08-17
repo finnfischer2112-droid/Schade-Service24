@@ -41,7 +41,7 @@ export function WhatWeCheck() {
               <div className="w-8 h-0.5 bg-white/40"></div>
               <span className="text-xs font-bold uppercase tracking-widest text-white/60">Begutachtung</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight heading-gradient-light">
               Kein Schaden bleibt verborgen.
             </h2>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
