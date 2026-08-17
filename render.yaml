@@ -43,7 +43,7 @@ services:
     region: frankfurt    # EU region for DSGVO compliance
 
     buildCommand: |
-      npm install -g pnpm@latest
+      corepack enable pnpm
       pnpm install --frozen-lockfile
       pnpm --filter @workspace/api-server run build
 
@@ -92,17 +92,17 @@ services:
     region: frankfurt
 
     buildCommand: |
-      npm install -g pnpm@latest
+      corepack enable pnpm
       pnpm install --frozen-lockfile
-      pnpm --filter @workspace/landingpage run build
+      BASE_PATH=/ PORT=3000 pnpm --filter @workspace/landingpage run build
 
     # "serve" delivers the SPA and handles client-side routing (-s = single-page mode)
     startCommand: npx serve -s artifacts/landingpage/dist/public -l $PORT
 
     envVars:
+      - key: NODE_ENV
+        value: production
+
       # Tell the React app where the API lives.
       - key: VITE_API_URL
         value: https://schaden-service24-api.onrender.com   # ← update after first deploy
-
-      - key: NODE_ENV
-        value: production
