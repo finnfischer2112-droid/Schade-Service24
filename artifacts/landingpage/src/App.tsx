@@ -6,6 +6,9 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
 import Home from '@/pages/Home';
 import SchadenMelden from '@/pages/SchadenMelden';
+import Impressum from '@/pages/Impressum';
+import Datenschutz from '@/pages/Datenschutz';
+import { CookieBanner } from '@/components/CookieBanner';
 import {
   Route,
   Switch,
@@ -21,6 +24,8 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/schaden-melden" component={SchadenMelden} />
+        <Route path="/impressum" component={Impressum} />
+        <Route path="/datenschutz" component={Datenschutz} />
         <Route component={NotFound} />
       </Switch>
     </RoutedErrorBoundary>
@@ -38,6 +43,7 @@ function App() {
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
           <Router />
+          <CookieBanner />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

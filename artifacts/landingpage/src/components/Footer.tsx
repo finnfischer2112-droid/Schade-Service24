@@ -1,5 +1,7 @@
+import { Link } from 'wouter';
 import { config } from '@/config';
 import { trackEvent } from '@/lib/tracking';
+import { revokeConsent } from '@/lib/consent';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -63,9 +65,15 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
           <p>&copy; {currentYear} {config.COMPANY_NAME}. Alle Rechte vorbehalten.</p>
-          <div className="flex space-x-6">
-            <a href="https://rcs.stageberry.net/impressum" className="hover:text-white transition-colors">Impressum</a>
-            <a href="https://rcs.stageberry.net/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link href="/impressum" className="hover:text-white transition-colors">Impressum</Link>
+            <Link href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link>
+            <button
+              onClick={() => revokeConsent()}
+              className="hover:text-white transition-colors"
+            >
+              Cookie-Einstellungen
+            </button>
           </div>
         </div>
       </div>
