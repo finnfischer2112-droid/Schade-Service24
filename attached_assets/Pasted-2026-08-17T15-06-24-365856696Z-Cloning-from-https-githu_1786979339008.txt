@@ -1,0 +1,39 @@
+2026-08-17T15:06:24.365856696Z ==> Cloning from https://github.com/finnfischer2112-droid/Schade-Service24
+2026-08-17T15:06:25.88851367Z ==> Checking out commit 775a7b40daefaf5d1b61a41d1b1e46e2ba2089a4 in branch main
+2026-08-17T15:06:39.542743981Z ==> Retrying git fetch...
+2026-08-17T15:06:46.303205038Z ==> Using Node.js version 24.14.1 (default)
+2026-08-17T15:06:46.303212857Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-08-17T15:06:46.335709262Z ==> Running build command 'npm install -g pnpm@latest
+2026-08-17T15:06:46.335713177Z pnpm install --frozen-lockfile
+2026-08-17T15:06:46.33571516Z pnpm --filter @workspace/landingpage run build
+2026-08-17T15:06:46.335716607Z '...
+2026-08-17T15:06:47.107898604Z npm error code EROFS
+2026-08-17T15:06:47.107928367Z npm error syscall rename
+2026-08-17T15:06:47.107989973Z npm error path /usr/lib/node_modules/pnpm
+2026-08-17T15:06:47.108049675Z npm error dest /usr/lib/node_modules/.pnpm-H0EZVZtB
+2026-08-17T15:06:47.108126908Z npm error errno -30
+2026-08-17T15:06:47.108280561Z npm error rofs EROFS: read-only file system, rename '/usr/lib/node_modules/pnpm' -> '/usr/lib/node_modules/.pnpm-H0EZVZtB'
+2026-08-17T15:06:47.108579027Z npm error rofs Often virtualized file systems, or other file systems
+2026-08-17T15:06:47.108582158Z npm error rofs that don't support symlinks, give this error.
+2026-08-17T15:06:47.109881992Z npm error A complete log of this run can be found in: /opt/render/.cache/_logs/2026-08-17T15_06_46_435Z-debug-0.log
+2026-08-17T15:06:53.938827686Z 
+2026-08-17T15:06:53.938843405Z > @workspace/landingpage@0.0.0 build /opt/render/project/src/artifacts/landingpage
+2026-08-17T15:06:53.938847549Z > vite build --config vite.config.ts
+2026-08-17T15:06:53.938848902Z 
+2026-08-17T15:06:54.157469549Z failed to load config from /opt/render/project/src/artifacts/landingpage/vite.config.ts
+2026-08-17T15:06:54.159767519Z error during build:
+2026-08-17T15:06:54.159774863Z Error: BASE_PATH environment variable is required but was not provided.
+2026-08-17T15:06:54.159778325Z     at file:///opt/render/project/src/artifacts/landingpage/node_modules/.vite-temp/vite.config.ts.timestamp-1786979214089-3b60eec7bfbbe8.mjs:20:9
+2026-08-17T15:06:54.159781166Z     at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+2026-08-17T15:06:54.159784281Z     at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+2026-08-17T15:06:54.159789309Z     at async loadConfigFromBundledFile (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35996:12)
+2026-08-17T15:06:54.159791889Z     at async bundleAndLoadConfigFile (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35884:17)
+2026-08-17T15:06:54.159794623Z     at async loadConfigFromFile (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35851:42)
+2026-08-17T15:06:54.159796041Z     at async resolveConfig (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:35500:22)
+2026-08-17T15:06:54.159820782Z     at async createBuilder (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:33955:19)
+2026-08-17T15:06:54.159822681Z     at async CAC.<anonymous> (file:///opt/render/project/src/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0_tsx@4.23.1_yaml@2.9.0/node_modules/vite/dist/node/cli.js:629:10)
+2026-08-17T15:06:54.182956972Z /opt/render/project/src/artifacts/landingpage:
+2026-08-17T15:06:54.182964552Z  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/landingpage@0.0.0 build: `vite build --config vite.config.ts`
+2026-08-17T15:06:54.182967584Z Exit status 1
+2026-08-17T15:06:54.224098283Z ==> Build failed 😞
+2026-08-17T15:06:54.224105728Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
