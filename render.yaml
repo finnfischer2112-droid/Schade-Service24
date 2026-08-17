@@ -29,6 +29,7 @@ databases:
   - name: schaden-service24-db
     databaseName: schaden_service24
     plan: free          # upgrade to "starter" for production
+    region: frankfurt   # must match the API service region (EU/DSGVO)
 
 services:
 
