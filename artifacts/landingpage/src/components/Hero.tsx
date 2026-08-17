@@ -36,7 +36,7 @@ export function Hero() {
           </h1>
 
           <p className="text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-10">
-            Ein Unfall mit dem eigenen Fahrzeug wirft häufig viele Fragen auf. Wie groß ist der tatsächliche Schaden? Welche Reparaturen sind erforderlich? Und welche Unterlagen werden für die weitere Schadensabwicklung benötigt? Gerade bei einem größeren Fahrzeugschaden reicht eine erste Einschätzung von außen oft nicht aus. Ein KFZ Gutachter kann den Schaden fachlich erfassen, dokumentieren und die relevanten Fahrzeug- und Schadensdaten in einem Gutachten zusammenführen. Für Fahrzeughalter in Kaiserslautern und Umgebung kann eine strukturierte Begutachtung daher ein wichtiger Schritt nach einem Unfall sein. Dabei kommt es darauf an, den individuellen Schaden nachvollziehbar zu erfassen und die weitere Abwicklung auf eine dokumentierte Grundlage zu stellen.
+            Ein Unfall mit dem eigenen Fahrzeug wirft häufig viele Fragen auf. Wie groß ist der tatsächliche Schaden? Welche Reparaturen sind erforderlich? Ein KFZ Gutachter kann den Schaden fachlich erfassen, dokumentieren und die relevanten Fahrzeug- und Schadensdaten in einem Gutachten zusammenführen.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">

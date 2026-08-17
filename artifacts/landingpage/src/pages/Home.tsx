@@ -22,9 +22,9 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <ProblemSolution />
+        <Process />
         <Services />
         <WhatWeCheck />
-        <Process />
         <CostSection />
         <SeoContent />
         <InsuranceSection />
