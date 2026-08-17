@@ -82,46 +82,26 @@ services:
     # Run migrations manually once after first deploy (see DEPLOY.md step 5).
 
   # ----------------------------------------------------------
-  # 2) LANDING PAGE  (Vite / React – deployed as static site)
+  # 2) LANDING PAGE  (Vite / React – deployed as Node web service)
   # ----------------------------------------------------------
   - type: web
     name: schaden-service24-web
-    runtime: static
-    # Note: plan and region are not supported for static sites on Render
+    runtime: node
+    plan: free
+    region: frankfurt
 
     buildCommand: |
       npm install -g pnpm@latest
       pnpm install --frozen-lockfile
       pnpm --filter @workspace/landingpage run build
 
-    staticPublishPath: artifacts/landingpage/dist/public
-
-    # Rewrite all paths to index.html for client-side routing (wouter).
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-
-    headers:
-      # Aggressive caching for hashed assets, no-cache for HTML
-      - path: /assets/*
-        name: Cache-Control
-        value: public, max-age=31536000, immutable
-      - path: /index.html
-        name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+    # "serve" delivers the SPA and handles client-side routing (-s = single-page mode)
+    startCommand: npx serve -s artifacts/landingpage/dist/public -l $PORT
 
     envVars:
-      # Used by vite.config.ts at build time.
-      # Do NOT prefix with VITE_ here – PORT and BASE_PATH are Node-level vars
-      # consumed by the Vite config process, not injected into browser bundle.
-      - key: PORT
-        value: 3000          # dummy value; Render static builder doesn't listen
-      - key: BASE_PATH
-        value: /
-
-      # Tell the React app where the API lives so relative /api/* calls are
-      # redirected to the correct backend.
-      # Set VITE_API_URL to your API service URL (or leave blank if same origin).
+      # Tell the React app where the API lives.
       - key: VITE_API_URL
         value: https://schaden-service24-api.onrender.com   # ← update after first deploy
+
+      - key: NODE_ENV
+        value: production
