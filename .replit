@@ -24,3 +24,12 @@ channel = "stable-25_05"
 
 [objectStorage]
 defaultBucketID = "replit-objstore-ed0694f9-b3fb-41ed-8f92-6cccdc32121d"
+
+[userenv]
+
+[userenv.shared]
+SMTP_HOST = "smtp.hosteurope.de"
+SMTP_PORT = "587"
+SMTP_USER = "info@schaden-service24.com"
+SMTP_FROM = "info@schaden-service24.de"
+SMTP_TO = "info@schaden-service24.de"
