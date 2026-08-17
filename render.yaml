@@ -1,0 +1,132 @@
+# ============================================================
+# Render Blueprint – Schaden-Service24
+# Docs: https://render.com/docs/blueprint-spec
+# ============================================================
+#
+# ARCHITECTURE
+# ─────────────────────────────────────────────────────────
+#  ┌─────────────────────────┐      ┌──────────────────────┐
+#  │  Static Site            │─────>│  Web Service          │
+#  │  (Vite / React)         │ API  │  (Express / Node.js)  │
+#  │  schaden-service24.com  │      │  api.schaden-…        │
+#  └─────────────────────────┘      └──────────┬───────────┘
+#                                              │ DATABASE_URL
+#                                   ┌──────────▼───────────┐
+#                                   │  PostgreSQL Database  │
+#                                   └──────────────────────┘
+#
+# ⚠  OBJECT STORAGE NOTE
+#    The photo-upload feature (Schaden-Melden) uses Replit Object Storage,
+#    which is not available outside of Replit.
+#    On Render you must replace it with an S3-compatible service
+#    (e.g. AWS S3, Cloudflare R2, Backblaze B2) and update
+#    artifacts/api-server/src/lib/objectStorage.ts accordingly.
+#    Until then, the /schaden-melden funnel's photo upload will fail,
+#    but the rest of the landing page works fully.
+# ============================================================
+
+databases:
+  - name: schaden-service24-db
+    databaseName: schaden_service24
+    plan: free          # upgrade to "starter" for production
+
+services:
+
+  # ----------------------------------------------------------
+  # 1) API SERVER  (Node.js / Express)
+  # ----------------------------------------------------------
+  - type: web
+    name: schaden-service24-api
+    runtime: node
+    plan: free           # upgrade to "starter" for production (no sleep)
+    region: frankfurt    # EU region for DSGVO compliance
+
+    buildCommand: |
+      npm install -g pnpm@latest
+      pnpm install --frozen-lockfile
+      pnpm --filter @workspace/api-server run build
+
+    startCommand: pnpm --filter @workspace/api-server run start
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      # Render injects PORT automatically; the server already reads process.env.PORT
+      # — no override needed.
+
+      - key: DATABASE_URL
+        fromDatabase:
+          name: schaden-service24-db
+          property: connectionString
+
+      - key: SESSION_SECRET
+        generateValue: true    # Render generates a random secret on first deploy
+
+      # Object-storage env vars (currently Replit-specific – see ⚠ note above).
+      # Replace values with your S3-compatible bucket details before enabling photo upload.
+      - key: DEFAULT_OBJECT_STORAGE_BUCKET_ID
+        value: REPLACE_WITH_YOUR_BUCKET_ID
+      - key: PRIVATE_OBJECT_DIR
+        value: REPLACE_WITH_YOUR_PRIVATE_DIR
+      - key: PUBLIC_OBJECT_SEARCH_PATHS
+        value: REPLACE_WITH_YOUR_PUBLIC_PATHS
+
+      # Allow the static site's origin so CORS is not blocked.
+      # Set this to your static site's Render URL or custom domain.
+      - key: CORS_ORIGIN
+        value: https://schaden-service24.com   # ← update when domain is connected
+
+    # Run DB migrations automatically on every deploy.
+    # Uses drizzle-kit's push command (applies schema without a migration folder).
+    preDeployCommand: |
+      pnpm install --frozen-lockfile
+      cd lib/db && DATABASE_URL=$DATABASE_URL npx drizzle-kit push
+
+    healthCheckPath: /api/health   # add a GET /api/health route (see DEPLOY.md)
+
+  # ----------------------------------------------------------
+  # 2) LANDING PAGE  (Vite / React – deployed as static site)
+  # ----------------------------------------------------------
+  - type: web
+    name: schaden-service24-web
+    runtime: static
+    plan: free
+    region: frankfurt
+
+    buildCommand: |
+      npm install -g pnpm@latest
+      pnpm install --frozen-lockfile
+      pnpm --filter @workspace/landingpage run build
+
+    staticPublishPath: artifacts/landingpage/dist/public
+
+    # Rewrite all paths to index.html for client-side routing (wouter).
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+
+    headers:
+      # Aggressive caching for hashed assets, no-cache for HTML
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+
+    envVars:
+      # Used by vite.config.ts at build time.
+      # Do NOT prefix with VITE_ here – PORT and BASE_PATH are Node-level vars
+      # consumed by the Vite config process, not injected into browser bundle.
+      - key: PORT
+        value: 3000          # dummy value; Render static builder doesn't listen
+      - key: BASE_PATH
+        value: /
+
+      # Tell the React app where the API lives so relative /api/* calls are
+      # redirected to the correct backend.
+      # Set VITE_API_URL to your API service URL (or leave blank if same origin).
+      - key: VITE_API_URL
+        value: https://schaden-service24-api.onrender.com   # ← update after first deploy
