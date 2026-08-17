@@ -47,21 +47,6 @@ function ImageTextRow({
   );
 }
 
-function TextBlock({ block }: { block: SeoBlock }) {
-  return (
-    <div className="space-y-4">
-      <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight heading-gradient">
-        {block.heading}
-      </h2>
-      {block.paragraphs.map((p, i) => (
-        <p key={i} className="text-base md:text-lg text-muted-foreground leading-relaxed">
-          {p}
-        </p>
-      ))}
-    </div>
-  );
-}
-
 const imageRows: SeoBlock[] = [
   {
     heading: 'Wann ist ein KFZ Gutachter Kaiserslautern nach einem Unfall sinnvoll?',
@@ -149,72 +134,50 @@ const fazit: SeoBlock = {
   ],
 };
 
+const rowImages = [
+  { image: '/seo-gutachter-kl.jpg', alt: 'KFZ Gutachter Kaiserslautern begutachtet einen Unfallschaden am Fahrzeug' },
+  { image: '/seo-unfallgutachten.jpg', alt: 'Unfallgutachten Kaiserslautern – Dokumentation mit Schadenfotos und Unterlagen' },
+  { image: '/seo-gutachter.jpg', alt: 'Unfallstelle mit Warndreieck – erste Schritte nach einem Fahrzeugschaden' },
+  { image: '/seo-sachverstaendiger.jpg', alt: 'KFZ Sachverständiger Kaiserslautern prüft die Beschädigung am Fahrzeug' },
+  { image: '/seo-unfallgutachten.jpg', alt: 'Unterlagen und Informationen für den KFZ Gutachter in Kaiserslautern' },
+  { image: '/seo-gutachter-kl.jpg', alt: 'KFZ Gutachter dokumentiert die festgestellten Schäden am Fahrzeug' },
+  { image: '/seo-sachverstaendiger.jpg', alt: 'Schaden-Service24 – KFZ Sachverständiger für Unfallgutachten KFZ und NFZ' },
+  { image: '/seo-gutachter.jpg', alt: 'Weitere Leistungen rund um die Schadensabwicklung nach einem Unfall' },
+];
+
 export function SeoContent() {
+  const blocks: SeoBlock[] = [
+    imageRows[0],
+    imageRows[1],
+    textBlocks[0],
+    textBlocks[1],
+    imageRows[2],
+    textBlocks[2],
+    imageRows[3],
+    textBlocks[3],
+  ];
+
   return (
     <>
-      {/* Alternating image/text rows */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-24">
-          <div>
-            <SectionLabel text="KFZ Gutachter Kaiserslautern" />
-            <ImageTextRow
-              block={imageRows[0]}
-              image="/hero-bg.jpg"
-              imageAlt="KFZ Gutachter begutachtet Unfallschaden am Fahrzeug in Kaiserslautern"
-              imageLeft={true}
-            />
-          </div>
-          <ImageTextRow
-            block={imageRows[1]}
-            image="/gutachten.jpg"
-            imageAlt="KFZ Gutachten Dokumentation nach einem Unfall in Kaiserslautern"
-            imageLeft={false}
-          />
-        </div>
-      </section>
-
-      {/* Text blocks on cream background */}
-      <section className="py-24 bg-secondary/60">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <SectionLabel text="Unfallgutachten & Schadensabwicklung" />
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            <TextBlock block={textBlocks[0]} />
-            <TextBlock block={textBlocks[1]} />
-          </div>
-        </div>
-      </section>
-
-      {/* Second pair of image/text rows */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-24">
-          <ImageTextRow
-            block={imageRows[2]}
-            image="/gutachten.jpg"
-            imageAlt="Unterlagen und Informationen für den KFZ Sachverständigen"
-            imageLeft={true}
-          />
-          <ImageTextRow
-            block={imageRows[3]}
-            image="/hero-bg.jpg"
-            imageAlt="Schaden-Service24 KFZ Sachverständiger für Unfallgutachten KFZ und NFZ"
-            imageLeft={false}
-          />
-        </div>
-      </section>
-
-      {/* Remaining text blocks */}
-      <section className="py-24 bg-secondary/60">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-          <SectionLabel text="Gut zu wissen" />
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-            <TextBlock block={textBlocks[2]} />
-            <TextBlock block={textBlocks[3]} />
+          <SectionLabel text="KFZ Gutachter Kaiserslautern" />
+          <div className="space-y-20 md:space-y-24">
+            {blocks.map((block, i) => (
+              <ImageTextRow
+                key={i}
+                block={block}
+                image={rowImages[i].image}
+                imageAlt={rowImages[i].alt}
+                imageLeft={i % 2 === 0}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Fazit */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-secondary/60">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
           <SectionLabel text="Fazit" center />
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight heading-gradient mb-8">
