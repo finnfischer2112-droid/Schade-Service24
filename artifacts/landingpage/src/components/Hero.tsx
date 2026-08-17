@@ -17,6 +17,11 @@ export function Hero() {
         <div className="absolute inset-0 bg-[#0d0d1a]/75"></div>
       </div>
 
+      {/* AI disclosure label (Pflichtkennzeichnung) */}
+      <span className="absolute bottom-2 right-3 z-10 text-xs italic text-slate-400/80 pointer-events-none">
+        KI generiert
+      </span>
+
       <div className="container mx-auto px-4 md:px-6 max-w-6xl py-24 md:py-32">
         <div className="max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
 

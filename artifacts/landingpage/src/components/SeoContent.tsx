@@ -26,12 +26,11 @@ function ImageTextRow({
 }) {
   return (
     <div className="grid md:grid-cols-2 gap-12 items-center">
-      <div
-        className={`relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] ${
-          imageLeft ? 'order-2 md:order-1' : 'order-2'
-        }`}
-      >
-        <img src={image} alt={imageAlt} className="object-cover w-full h-full" loading="lazy" />
+      <div className={imageLeft ? 'order-2 md:order-1' : 'order-2'}>
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+          <img src={image} alt={imageAlt} className="object-cover w-full h-full" loading="lazy" />
+        </div>
+        <p className="mt-2 text-xs italic text-muted-foreground/70">KI generiert</p>
       </div>
       <div className={`space-y-5 ${imageLeft ? 'order-1 md:order-2' : 'order-1'}`}>
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight heading-gradient">

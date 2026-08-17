@@ -5,13 +5,16 @@ export function InsuranceSection() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
-            <img 
-              src="/gutachten.jpg" 
-              alt="Gutachten Dokumentation" 
-              className="object-cover w-full h-full"
-              loading="lazy"
-            />
+          <div className="order-2 md:order-1">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <img 
+                src="/gutachten.jpg" 
+                alt="Gutachten Dokumentation" 
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-2 text-xs italic text-muted-foreground/70">KI generiert</p>
           </div>
           
           <div className="order-1 md:order-2 space-y-6">
