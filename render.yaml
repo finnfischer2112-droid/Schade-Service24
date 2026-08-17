@@ -43,7 +43,6 @@ services:
     region: frankfurt    # EU region for DSGVO compliance
 
     buildCommand: |
-      corepack enable pnpm
       pnpm install --frozen-lockfile
       pnpm --filter @workspace/api-server run build
 
@@ -92,7 +91,6 @@ services:
     region: frankfurt
 
     buildCommand: |
-      corepack enable pnpm
       pnpm install --frozen-lockfile
       BASE_PATH=/ PORT=3000 pnpm --filter @workspace/landingpage run build
 
