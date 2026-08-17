@@ -1,0 +1,50 @@
+{"level":30,"time":1786973984877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":49,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786973994878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":50,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974004878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":51,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974014882,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":52,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":4,"msg":"request completed"}
+{"level":30,"time":1786974024878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":53,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974034878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":54,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974044877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":55,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974054877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":56,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974064877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":57,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974074877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":58,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974084877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":59,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974094878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":60,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974104877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":61,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974114878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":62,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974124877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":63,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974134878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":64,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974144878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":65,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974154877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":66,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974164877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":67,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974174878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":68,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974184878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":69,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974194877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":70,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974204877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":71,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974214878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":72,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974224878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":73,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974234878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":74,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974244878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":75,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974254877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":76,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974264877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":77,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974274877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":78,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974284878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":79,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974294877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":80,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974304882,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":81,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974314878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":82,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974324878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":83,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974334878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":84,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974344877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":85,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974354878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":86,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+{"level":30,"time":1786974364878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":87,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+{"level":30,"time":1786974374879,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":88,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":2,"msg":"request completed"}
+{"level":30,"time":1786974384878,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":89,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+==> Timed Out
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+{"level":30,"time":1786974394877,"pid":83,"hostname":"srv-da1gq481ne8s73cfbv6g-hibernate-5b79d48c9b-pw9wv","req":{"id":90,"method":"GET","url":"/api/health"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+/opt/render/project/src/artifacts/api-server:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/api-server@0.0.0 start: `node --enable-source-maps ./dist/index.mjs`
+Command failed with signal "SIGTERM"
+==> Running 'pnpm --filter @workspace/api-server run start'
+==> Detected service running on port 10000
+==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
