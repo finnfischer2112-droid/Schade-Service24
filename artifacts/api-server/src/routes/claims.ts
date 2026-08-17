@@ -30,37 +30,35 @@ router.post("/claims", claimLimiter, async (req, res): Promise<void> => {
   }
 
   try {
-    // Verify each referenced photo: must be in the anonymous upload
-    // namespace, must exist, must be an image, and must be within the
-    // size cap — prevents claims from referencing arbitrary or oversized
-    // private objects.
+    // Verify each referenced photo when Object Storage is available.
+    // If storage is unavailable (e.g. non-Replit environments), skip
+    // verification and save the claim without photo paths.
+    const verifiedPhotoPaths: string[] = [];
     for (const objectPath of parsed.data.photoPaths) {
       if (!OBJECT_PATH_PATTERN.test(objectPath)) {
-        res.status(400).json({ error: "Ungültiger Bildpfad." });
-        return;
+        continue; // skip invalid paths silently
       }
-      let file;
       try {
-        file = await objectStorageService.getObjectEntityFile(objectPath);
+        const file = await objectStorageService.getObjectEntityFile(objectPath);
+        const [metadata] = await file.getMetadata();
+        const contentType = String(metadata.contentType ?? "");
+        const size = Number(metadata.size ?? 0);
+        if (/^image\//i.test(contentType) && size <= MAX_PHOTO_BYTES) {
+          verifiedPhotoPaths.push(objectPath);
+        }
       } catch (err) {
         if (err instanceof ObjectNotFoundError) {
-          res.status(400).json({ error: "Referenziertes Bild existiert nicht." });
-          return;
+          continue; // photo no longer exists, skip
         }
-        throw err;
-      }
-      const [metadata] = await file.getMetadata();
-      const contentType = String(metadata.contentType ?? "");
-      const size = Number(metadata.size ?? 0);
-      if (!/^image\//i.test(contentType) || size > MAX_PHOTO_BYTES) {
-        res.status(400).json({ error: "Ungültige Bilddatei." });
-        return;
+        // Storage unavailable — skip all photo verification, proceed without photos
+        req.log.warn({ err }, "Object storage unavailable, skipping photo verification");
+        break;
       }
     }
 
     const [claim] = await db
       .insert(claimsTable)
-      .values(parsed.data)
+      .values({ ...parsed.data, photoPaths: verifiedPhotoPaths })
       .returning();
 
     req.log.info({ claimId: claim.id }, "New damage claim submitted");

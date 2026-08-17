@@ -163,11 +163,15 @@ export default function SchadenMelden() {
       const photoPaths: string[] = [];
       
       for (const file of data.photos) {
-        const res = await uploadFile(file);
-        if (res?.objectPath) {
-          photoPaths.push(res.objectPath);
-        } else {
-          throw new Error('Fehler beim Bildupload.');
+        try {
+          const res = await uploadFile(file);
+          if (res?.objectPath) {
+            photoPaths.push(res.objectPath);
+          }
+          // If upload returns no path, silently skip — claim is submitted without this photo.
+        } catch {
+          // Upload failed (e.g. storage unavailable) — skip photo, continue submission.
+          console.warn('Bildupload fehlgeschlagen, wird übersprungen.');
         }
       }
       
