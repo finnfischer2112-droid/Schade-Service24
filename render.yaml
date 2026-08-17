@@ -77,13 +77,9 @@ services:
       - key: CORS_ORIGIN
         value: https://schaden-service24.com   # ← update when domain is connected
 
-    # Run DB migrations automatically on every deploy.
-    # Uses drizzle-kit's push command (applies schema without a migration folder).
-    preDeployCommand: |
-      pnpm install --frozen-lockfile
-      cd lib/db && DATABASE_URL=$DATABASE_URL npx drizzle-kit push
-
     healthCheckPath: /api/health   # add a GET /api/health route (see DEPLOY.md)
+    # NOTE: preDeployCommand (DB migrations) is not supported on the free plan.
+    # Run migrations manually once after first deploy (see DEPLOY.md step 5).
 
   # ----------------------------------------------------------
   # 2) LANDING PAGE  (Vite / React – deployed as static site)
@@ -92,7 +88,7 @@ services:
     name: schaden-service24-web
     runtime: static
     plan: free
-    region: frankfurt
+    # Note: region is not supported for static sites on Render
 
     buildCommand: |
       npm install -g pnpm@latest
