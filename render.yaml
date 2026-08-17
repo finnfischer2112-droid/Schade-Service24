@@ -87,8 +87,7 @@ services:
   - type: web
     name: schaden-service24-web
     runtime: static
-    plan: free
-    # Note: region is not supported for static sites on Render
+    # Note: plan and region are not supported for static sites on Render
 
     buildCommand: |
       npm install -g pnpm@latest
