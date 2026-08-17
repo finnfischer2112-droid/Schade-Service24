@@ -87,7 +87,7 @@ services:
       - key: SMTP_FROM
         value: info@schaden-service24.de
       - key: SMTP_TO
-        value: info@schaden-service24.de
+        value: kahnert.m@googlemail.com
       - key: SMTP_PASSWORD
         sync: false   # set manually in Render dashboard → Environment
 
