@@ -15,7 +15,7 @@ export default function Impressum() {
             <p>RCS Gries &amp; Kahnert UG</p>
             <p>Saarpfalzstr. 55</p>
             <p>66914 Waldmohr</p>
-            <p>Telefon: 06373 – 2093898</p>
+            <p>Telefon: +49 160 98008009</p>
             <p>
               Email:{' '}
               <a href="mailto:info@schaden-service24.com" className="text-primary hover:underline break-all">

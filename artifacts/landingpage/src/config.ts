@@ -1,7 +1,7 @@
 export const config = {
   CTA_URL: "https://rcs.stageberry.net/kontakt",
-  PHONE: "06373 2093898",
-  PHONE_HREF: "tel:063732093898",
+  PHONE: "+49 160 98008009",
+  PHONE_HREF: "tel:+4916098008009",
   EMAIL: "info@schaden-service24.com",
   EMAIL_HREF: "mailto:info@schaden-service24.com",
   COMPANY_NAME: "Schaden-Service24",

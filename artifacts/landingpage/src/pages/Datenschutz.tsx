@@ -49,7 +49,7 @@ const blocks: Block[] = [
       'Matthias Kahnert',
       'Saarpfalz Straße 55,',
       '66914 Waldmohr',
-      'Telefon: 06373 / 209 38 98',
+      'Telefon: +49 160 98008009',
       'E-Mail: info@schaden-service24.com',
       'Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.',
     ],
