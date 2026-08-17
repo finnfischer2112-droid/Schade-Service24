@@ -4,10 +4,16 @@ import { getConsent, setConsent, onConsentChange } from '@/lib/consent';
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [marketingChecked, setMarketingChecked] = useState(false);
 
   useEffect(() => {
     setVisible(getConsent() === null);
-    return onConsentChange(() => setVisible(getConsent() === null));
+    return onConsentChange(() => {
+      setVisible(getConsent() === null);
+      setShowSettings(false);
+      setMarketingChecked(false);
+    });
   }, []);
 
   if (!visible) return null;
@@ -26,6 +32,40 @@ export function CookieBanner() {
           </Link>
           .
         </p>
+
+        {showSettings && (
+          <div className="mb-4 space-y-3 rounded-lg border border-slate-700 bg-slate-800/60 p-4">
+            <label className="flex items-start gap-3 text-sm">
+              <input
+                type="checkbox"
+                checked
+                disabled
+                className="mt-0.5 h-4 w-4 accent-primary"
+              />
+              <span>
+                <span className="font-semibold text-white">Technisch notwendig</span>
+                <br />
+                Erforderlich für den Betrieb der Website (z.&nbsp;B. Schadenmeldung,
+                Sicherheit). Immer aktiv.
+              </span>
+            </label>
+            <label className="flex items-start gap-3 text-sm cursor-pointer">
+              <input
+                type="checkbox"
+                checked={marketingChecked}
+                onChange={(e) => setMarketingChecked(e.target.checked)}
+                className="mt-0.5 h-4 w-4 accent-primary"
+              />
+              <span>
+                <span className="font-semibold text-white">Marketing &amp; Statistik</span>
+                <br />
+                Google Ads Conversion-Tracking und Messdienste von Google zur Erfolgsmessung
+                unserer Werbung.
+              </span>
+            </label>
+          </div>
+        )}
+
         <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => setConsent('accepted')}
@@ -39,6 +79,21 @@ export function CookieBanner() {
           >
             Nur notwendige
           </button>
+          {showSettings ? (
+            <button
+              onClick={() => setConsent(marketingChecked ? 'accepted' : 'declined')}
+              className="inline-flex items-center justify-center h-11 px-6 rounded-lg border border-slate-600 text-slate-200 font-semibold text-sm hover:bg-slate-800 transition-colors"
+            >
+              Auswahl speichern
+            </button>
+          ) : (
+            <button
+              onClick={() => setShowSettings(true)}
+              className="inline-flex items-center justify-center h-11 px-6 rounded-lg border border-slate-600 text-slate-200 font-semibold text-sm hover:bg-slate-800 transition-colors"
+            >
+              Individuelle Auswahl
+            </button>
+          )}
         </div>
       </div>
     </div>
