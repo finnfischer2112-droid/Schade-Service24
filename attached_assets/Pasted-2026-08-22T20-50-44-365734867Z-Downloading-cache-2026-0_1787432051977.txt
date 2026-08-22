@@ -1,0 +1,87 @@
+2026-08-22T20:50:44.365734867Z ==> Downloading cache...
+2026-08-22T20:50:44.392018649Z ==> Cloning from https://github.com/finnfischer2112-droid/Schade-Service24
+2026-08-22T20:50:45.593926189Z ==> Checking out commit 801714ab2b82bd5fb148f1995a3b81d3c6964f0e in branch main
+2026-08-22T20:50:49.72202565Z ==> Downloaded 101MB in 1s. Extraction took 3s.
+2026-08-22T20:50:50.303759863Z ==> Using Node.js version 24.14.1 (default)
+2026-08-22T20:50:50.303769178Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-08-22T20:50:50.336687562Z ==> Running build command 'pnpm install --frozen-lockfile
+2026-08-22T20:50:50.336703819Z pnpm --filter @workspace/db run push
+2026-08-22T20:50:50.336706445Z pnpm --filter @workspace/api-server run build
+2026-08-22T20:50:50.336708743Z '...
+2026-08-22T20:50:52.336222796Z 
+2026-08-22T20:50:52.336254961Z > @workspace/db@0.0.0 push /opt/render/project/src/lib/db
+2026-08-22T20:50:52.336260387Z > drizzle-kit push --config ./drizzle.config.ts
+2026-08-22T20:50:52.336262599Z 
+2026-08-22T20:50:52.477100985Z Reading config file '/opt/render/project/src/lib/db/drizzle.config.ts'
+2026-08-22T20:50:52.903209399Z Using 'pg' driver for database querying
+2026-08-22T20:50:53.15849053Z [⣷] Pulling schema from database...
+2026-08-22T20:50:53.280155612Z [⣯] Pulling schema from database...
+2026-08-22T20:50:53.408503316Z [⣟] Pulling schema from database...
+2026-08-22T20:50:53.519527466Z [✓] Pulling schema from database...
+2026-08-22T20:50:53.524360716Z [i] No changes detected
+2026-08-22T20:50:53.895694164Z 
+2026-08-22T20:50:53.89571196Z > @workspace/api-server@0.0.0 build /opt/render/project/src/artifacts/api-server
+2026-08-22T20:50:53.895734562Z > node ./build.mjs
+2026-08-22T20:50:53.895736881Z 
+2026-08-22T20:50:54.432292772Z 
+2026-08-22T20:50:54.432312782Z   dist/index.mjs                       2.3mb ⚠️
+2026-08-22T20:50:54.432315135Z   dist/pino-worker.mjs               153.4kb
+2026-08-22T20:50:54.43231674Z   dist/pino-file.mjs                 142.1kb
+2026-08-22T20:50:54.432318257Z   dist/pino-pretty.mjs               114.4kb
+2026-08-22T20:50:54.432319636Z   dist/thread-stream-worker.mjs        7.3kb
+2026-08-22T20:50:54.432321014Z   dist/index.mjs.map                   3.9mb
+2026-08-22T20:50:54.432322376Z   dist/pino-worker.mjs.map           256.9kb
+2026-08-22T20:50:54.43232379Z   dist/pino-file.mjs.map             229.0kb
+2026-08-22T20:50:54.432325177Z   dist/pino-pretty.mjs.map           203.6kb
+2026-08-22T20:50:54.43232665Z   dist/thread-stream-worker.mjs.map   12.0kb
+2026-08-22T20:50:54.432327783Z 
+2026-08-22T20:50:54.432329309Z ⚡ Done in 487ms
+2026-08-22T20:50:55.083564769Z ==> Uploading build...
+2026-08-22T20:51:00.945913342Z ==> Uploaded in 3.7s. Compression took 2.2s
+2026-08-22T20:51:00.949134976Z ==> Build successful 🎉
+2026-08-22T20:51:02.577692204Z ==> Deploying...
+2026-08-22T20:51:02.775202493Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-22T20:51:21.24195721Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-22T20:51:25.546567583Z 
+2026-08-22T20:51:25.546599704Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-22T20:51:25.546617935Z > node --enable-source-maps ./dist/index.mjs
+2026-08-22T20:51:25.546620565Z 
+2026-08-22T20:51:30.443185903Z {"level":30,"time":1787431890442,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","port":10000,"msg":"Server listening"}
+2026-08-22T20:51:30.764023532Z {"level":30,"time":1787431890763,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":1,"method":"HEAD","url":"/"},"res":{"statusCode":404},"responseTime":5,"msg":"request completed"}
+2026-08-22T20:51:32.600305449Z {"level":30,"time":1787431892599,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":2,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":4,"msg":"request completed"}
+2026-08-22T20:51:32.602811734Z {"level":30,"time":1787431892602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":3,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:51:33.473567135Z ==> Your service is live 🎉
+2026-08-22T20:51:33.579362336Z {"level":30,"time":1787431893579,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":4,"method":"GET","url":"/"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:51:33.679900275Z ==> 
+2026-08-22T20:51:33.684923266Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T20:51:33.688888666Z ==> 
+2026-08-22T20:51:33.692501679Z ==> Available at your primary URL https://schaden-service24-api.onrender.com
+2026-08-22T20:51:33.697077871Z ==> 
+2026-08-22T20:51:33.700937889Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T20:51:37.603863518Z {"level":30,"time":1787431897603,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":5,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:51:42.603417383Z {"level":30,"time":1787431902603,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":6,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:51:47.603237984Z {"level":30,"time":1787431907603,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":7,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T20:51:52.602951053Z {"level":30,"time":1787431912602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":8,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T20:51:57.60263218Z {"level":30,"time":1787431917602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":9,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:02.597442001Z {"level":30,"time":1787431922597,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":10,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:02.601492896Z {"level":30,"time":1787431922601,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":11,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:07.602342133Z {"level":30,"time":1787431927602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":12,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:12.602436951Z {"level":30,"time":1787431932602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":13,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:16.374937412Z {"level":30,"time":1787431936374,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":14,"method":"OPTIONS","url":"/api/claims"},"res":{"statusCode":204},"responseTime":0,"msg":"request completed"}
+2026-08-22T20:52:16.406526803Z ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+2026-08-22T20:52:16.406557894Z     at Object.xForwardedForHeader (/opt/render/project/src/node_modules/.pnpm/express-rate-limit@8.6.2_express@5.2.1/node_modules/express-rate-limit/dist/index.mjs:358:13)
+2026-08-22T20:52:16.406561174Z     at Object.wrappedValidations.<computed> (/opt/render/project/src/node_modules/.pnpm/express-rate-limit@8.6.2_express@5.2.1/node_modules/express-rate-limit/dist/index.mjs:682:22)
+2026-08-22T20:52:16.406563224Z     at Object.keyGenerator (/opt/render/project/src/node_modules/.pnpm/express-rate-limit@8.6.2_express@5.2.1/node_modules/express-rate-limit/dist/index.mjs:792:20)
+2026-08-22T20:52:16.406565724Z     at <anonymous> (/opt/render/project/src/node_modules/.pnpm/express-rate-limit@8.6.2_express@5.2.1/node_modules/express-rate-limit/dist/index.mjs:882:32)
+2026-08-22T20:52:16.406568234Z     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+2026-08-22T20:52:16.406570244Z     at async <anonymous> (/opt/render/project/src/node_modules/.pnpm/express-rate-limit@8.6.2_express@5.2.1/node_modules/express-rate-limit/dist/index.mjs:835:5) {
+2026-08-22T20:52:16.406572914Z   code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+2026-08-22T20:52:16.406574834Z   help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+2026-08-22T20:52:16.406576754Z }
+2026-08-22T20:52:16.455000663Z {"level":30,"time":1787431936454,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":15,"method":"POST","url":"/api/claims"},"claimId":1,"msg":"New damage claim submitted"}
+2026-08-22T20:52:16.460800703Z {"level":30,"time":1787431936459,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":15,"method":"POST","url":"/api/claims"},"res":{"statusCode":201},"responseTime":61,"msg":"request completed"}
+2026-08-22T20:52:17.602756704Z {"level":30,"time":1787431937602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":16,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:22.602560173Z {"level":30,"time":1787431942602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":17,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:27.602596829Z {"level":30,"time":1787431947602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":18,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T20:52:32.596861874Z {"level":30,"time":1787431952596,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":19,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T20:52:32.602364537Z {"level":30,"time":1787431952602,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-6f67fc9f7d-4bc9c","req":{"id":20,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
