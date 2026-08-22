@@ -1,0 +1,67 @@
+2026-08-22T22:01:23.623470229Z '...
+2026-08-22T22:01:25.589235543Z 
+2026-08-22T22:01:25.589245967Z > @workspace/db@0.0.0 push /opt/render/project/src/lib/db
+2026-08-22T22:01:25.589248959Z > drizzle-kit push --config ./drizzle.config.ts
+2026-08-22T22:01:25.589250203Z 
+2026-08-22T22:01:25.721755947Z Reading config file '/opt/render/project/src/lib/db/drizzle.config.ts'
+2026-08-22T22:01:26.111456872Z Using 'pg' driver for database querying
+2026-08-22T22:01:26.364564107Z [⣷] Pulling schema from database...
+2026-08-22T22:01:26.486198231Z [⣯] Pulling schema from database...
+2026-08-22T22:01:26.609978129Z [✓] Pulling schema from database...
+2026-08-22T22:01:26.615143687Z [i] No changes detected
+2026-08-22T22:01:27.002969906Z 
+2026-08-22T22:01:27.002999248Z > @workspace/api-server@0.0.0 build /opt/render/project/src/artifacts/api-server
+2026-08-22T22:01:27.003003114Z > node ./build.mjs
+2026-08-22T22:01:27.003005196Z 
+2026-08-22T22:01:27.488712397Z 
+2026-08-22T22:01:27.488731565Z   dist/index.mjs                       2.3mb ⚠️
+2026-08-22T22:01:27.488733663Z   dist/pino-worker.mjs               153.4kb
+2026-08-22T22:01:27.488735111Z   dist/pino-file.mjs                 142.1kb
+2026-08-22T22:01:27.488736804Z   dist/pino-pretty.mjs               114.4kb
+2026-08-22T22:01:27.488738607Z   dist/thread-stream-worker.mjs        7.3kb
+2026-08-22T22:01:27.488740036Z   dist/index.mjs.map                   3.9mb
+2026-08-22T22:01:27.488741467Z   dist/pino-worker.mjs.map           256.9kb
+2026-08-22T22:01:27.488742745Z   dist/pino-file.mjs.map             229.0kb
+2026-08-22T22:01:27.488744194Z   dist/pino-pretty.mjs.map           203.6kb
+2026-08-22T22:01:27.488745436Z   dist/thread-stream-worker.mjs.map   12.0kb
+2026-08-22T22:01:27.488746572Z 
+2026-08-22T22:01:27.488748188Z ⚡ Done in 438ms
+2026-08-22T22:01:28.462165254Z ==> Uploading build...
+2026-08-22T22:01:35.124582689Z ==> Uploaded in 4.4s. Compression took 2.3s
+2026-08-22T22:01:35.126395139Z ==> Build successful 🎉
+2026-08-22T22:01:36.96437166Z ==> Deploying...
+2026-08-22T22:01:37.165688174Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-22T22:01:58.90730724Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-22T22:02:03.899472004Z 
+2026-08-22T22:02:03.899500065Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-22T22:02:03.899505765Z > node --enable-source-maps ./dist/index.mjs
+2026-08-22T22:02:03.899508815Z 
+2026-08-22T22:02:08.496565219Z {"level":30,"time":1787436128495,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","port":10000,"msg":"Server listening"}
+2026-08-22T22:02:09.053847892Z {"level":30,"time":1787436129053,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":1,"method":"HEAD","url":"/"},"res":{"statusCode":404},"responseTime":6,"msg":"request completed"}
+2026-08-22T22:02:16.906120802Z {"level":30,"time":1787436136905,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":2,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":9,"msg":"request completed"}
+2026-08-22T22:02:16.908966006Z {"level":30,"time":1787436136908,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":3,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:17.978579165Z ==> Your service is live 🎉
+2026-08-22T22:02:17.994765334Z {"level":30,"time":1787436137994,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":4,"method":"GET","url":"/"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:18.27175214Z ==> 
+2026-08-22T22:02:18.27422748Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T22:02:18.276936565Z ==> 
+2026-08-22T22:02:18.279327553Z ==> Available at your primary URL https://schaden-service24-api.onrender.com
+2026-08-22T22:02:18.281500437Z ==> 
+2026-08-22T22:02:18.284008867Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T22:02:21.906728802Z {"level":30,"time":1787436141906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":5,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:26.907111536Z {"level":30,"time":1787436146906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":6,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:02:31.906191303Z {"level":30,"time":1787436151905,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":7,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:02:36.898986725Z {"level":30,"time":1787436156897,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":8,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:36.908003582Z {"level":30,"time":1787436156906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":9,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:41.906837714Z {"level":30,"time":1787436161906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":10,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:46.905709035Z {"level":30,"time":1787436166905,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":11,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:51.906832915Z {"level":30,"time":1787436171906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":12,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:02:54.737037034Z {"level":30,"time":1787436174736,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":13,"method":"OPTIONS","url":"/api/claims"},"res":{"statusCode":204},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:02:54.819950448Z {"level":30,"time":1787436174819,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":14,"method":"POST","url":"/api/claims"},"claimId":4,"msg":"New damage claim submitted"}
+2026-08-22T22:02:54.897878809Z {"level":30,"time":1787436174820,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","smtp":{"hostConfigured":true,"port":587,"userConfigured":true,"passwordConfigured":true,"fromConfigured":true,"toConfigured":true},"msg":"SMTP configuration checked for claim notification"}
+2026-08-22T22:02:54.897954281Z {"level":30,"time":1787436174895,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":14,"method":"POST","url":"/api/claims"},"res":{"statusCode":201},"responseTime":129,"msg":"request completed"}
+2026-08-22T22:02:56.906098577Z {"level":30,"time":1787436176905,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":15,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:03:01.906857764Z {"level":30,"time":1787436181906,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":16,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:03:04.909508987Z {"level":50,"time":1787436184909,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":14,"method":"POST","url":"/api/claims"},"err":{"type":"Error","message":"connect ENETUNREACH 2606:4700:90:0:f225:a1af:129b:4ba1:587 - Local (:::0)","stack":"Error: connect ENETUNREACH 2606:4700:90:0:f225:a1af:129b:4ba1:587 - Local (:::0)\n    at internalConnect (node:net:1110:16)\n    at defaultTriggerAsyncIdScope (node:internal/async_hooks:472:18)\n    at node:net:1364:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)","errno":-101,"code":"ESOCKET","syscall":"connect","address":"2606:4700:90:0:f225:a1af:129b:4ba1","port":587,"command":"CONN"},"msg":"Failed to send claim notification email"}
+2026-08-22T22:03:06.89613246Z {"level":30,"time":1787436186895,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":17,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:03:06.906154763Z {"level":30,"time":1787436186905,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-66f6c59f54-kqpp4","req":{"id":18,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
