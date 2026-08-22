@@ -1,0 +1,50 @@
+2026-08-22T22:12:29.57379929Z   dist/pino-pretty.mjs               114.4kb
+2026-08-22T22:12:29.573801796Z   dist/thread-stream-worker.mjs        7.3kb
+2026-08-22T22:12:29.573803955Z   dist/index.mjs.map                   3.9mb
+2026-08-22T22:12:29.573806342Z   dist/pino-worker.mjs.map           256.9kb
+2026-08-22T22:12:29.573808584Z   dist/pino-file.mjs.map             229.0kb
+2026-08-22T22:12:29.573810606Z   dist/pino-pretty.mjs.map           203.6kb
+2026-08-22T22:12:29.573812753Z   dist/thread-stream-worker.mjs.map   12.0kb
+2026-08-22T22:12:29.573814602Z 
+2026-08-22T22:12:29.573817132Z ⚡ Done in 441ms
+2026-08-22T22:12:30.57461732Z ==> Uploading build...
+2026-08-22T22:12:37.061641704Z ==> Uploaded in 4.3s. Compression took 2.2s
+2026-08-22T22:12:37.063428274Z ==> Build successful 🎉
+2026-08-22T22:12:38.577582189Z ==> Deploying...
+2026-08-22T22:12:38.766573167Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-22T22:12:56.584739399Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-22T22:13:01.177561656Z 
+2026-08-22T22:13:01.177589847Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-22T22:13:01.177598297Z > node --enable-source-maps ./dist/index.mjs
+2026-08-22T22:13:01.177600997Z 
+2026-08-22T22:13:05.774318222Z {"level":30,"time":1787436785686,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","port":10000,"msg":"Server listening"}
+2026-08-22T22:13:06.070843693Z {"level":30,"time":1787436786070,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":1,"method":"HEAD","url":"/"},"res":{"statusCode":404},"responseTime":8,"msg":"request completed"}
+2026-08-22T22:13:08.691077334Z {"level":30,"time":1787436788690,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":2,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":3,"msg":"request completed"}
+2026-08-22T22:13:08.69303858Z {"level":30,"time":1787436788692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":3,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:13:09.84123462Z {"level":30,"time":1787436789840,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":4,"method":"GET","url":"/"},"res":{"statusCode":404},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:13:09.851910943Z ==> Your service is live 🎉
+2026-08-22T22:13:10.051175351Z ==> 
+2026-08-22T22:13:10.054176489Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T22:13:10.057043688Z ==> 
+2026-08-22T22:13:10.059654722Z ==> Available at your primary URL https://schaden-service24-api.onrender.com
+2026-08-22T22:13:10.062366061Z ==> 
+2026-08-22T22:13:10.065236851Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T22:13:13.693830996Z {"level":30,"time":1787436793693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":5,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:18.693650078Z {"level":30,"time":1787436798693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":6,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:23.693341535Z {"level":30,"time":1787436803693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":7,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:28.712420333Z {"level":30,"time":1787436808712,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":8,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:33.693407625Z {"level":30,"time":1787436813693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":9,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:38.688012943Z {"level":30,"time":1787436818687,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":10,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:38.693185566Z {"level":30,"time":1787436818693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":11,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:40.460330867Z {"level":30,"time":1787436820459,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":12,"method":"OPTIONS","url":"/api/claims"},"res":{"statusCode":204},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:40.604952098Z {"level":30,"time":1787436820599,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":13,"method":"POST","url":"/api/claims"},"claimId":6,"msg":"New damage claim submitted"}
+2026-08-22T22:13:40.688566287Z {"level":30,"time":1787436820599,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","smtp":{"hostConfigured":true,"port":465,"userConfigured":true,"passwordConfigured":true,"fromConfigured":true,"toConfigured":true},"msg":"SMTP configuration checked for claim notification"}
+2026-08-22T22:13:40.688613178Z {"level":30,"time":1787436820686,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":13,"method":"POST","url":"/api/claims"},"res":{"statusCode":201},"responseTime":175,"msg":"request completed"}
+2026-08-22T22:13:43.693073013Z {"level":30,"time":1787436823692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":14,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:13:48.693693778Z {"level":30,"time":1787436828693,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":15,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T22:13:50.776255602Z {"level":50,"time":1787436830775,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":13,"method":"POST","url":"/api/claims"},"err":{"type":"Error","message":"Connection timeout","stack":"Error: Connection timeout\n    at SMTPConnection._formatError (/opt/render/project/src/node_modules/.pnpm/nodemailer@9.0.5/node_modules/nodemailer/lib/smtp-connection/index.js:938:19)\n    at SMTPConnection._onError (/opt/render/project/src/node_modules/.pnpm/nodemailer@9.0.5/node_modules/nodemailer/lib/smtp-connection/index.js:919:20)\n    at SMTPConnection._onConnectionError (/opt/render/project/src/node_modules/.pnpm/nodemailer@9.0.5/node_modules/nodemailer/lib/smtp-connection/index.js:434:18)\n    at Timeout.<anonymous> (/opt/render/project/src/node_modules/.pnpm/nodemailer@9.0.5/node_modules/nodemailer/lib/smtp-connection/index.js:414:18)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","code":"ETIMEDOUT","command":"CONN"},"msg":"Failed to send claim notification email"}
+2026-08-22T22:13:53.693076373Z {"level":30,"time":1787436833692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":16,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:13:58.692756064Z {"level":30,"time":1787436838692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":17,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:14:03.69303497Z {"level":30,"time":1787436843692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":18,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:14:08.686880173Z {"level":30,"time":1787436848686,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":19,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T22:14:08.692886585Z {"level":30,"time":1787436848692,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-5f7854c8cf-8kj2l","req":{"id":20,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
