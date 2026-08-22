@@ -1,1 +1,2 @@
 - [Orval codegen quirks](orval-codegen-quirks.md) — api-spec needs zod devDep or orval emits zod-v4 API; schema names must not collide with operation-derived zod exports.
+- [Git provider vs terminal auth](git-provider-vs-terminal-auth.md) — Replit's Git pane can push even when shell GitHub credentials remain invalid.
