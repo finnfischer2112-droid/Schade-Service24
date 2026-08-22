@@ -30,6 +30,6 @@ defaultBucketID = "replit-objstore-ed0694f9-b3fb-41ed-8f92-6cccdc32121d"
 [userenv.shared]
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = "587"
-SMTP_USER = "kahnert.m@googlemail.com"
-SMTP_FROM = "kahnert.m@googlemail.com"
+SMTP_USER = "finnfischer2112@gmail.com"
+SMTP_FROM = "finnfischer2112@gmail.com"
 SMTP_TO = "finnfischer2112@gmail.com"
