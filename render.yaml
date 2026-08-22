@@ -83,9 +83,9 @@ services:
       - key: SMTP_PORT
         value: 587
       - key: SMTP_USER
-        value: kahnert.m@googlemail.com
+        value: finnfischer2112@gmail.com
       - key: SMTP_FROM
-        value: kahnert.m@googlemail.com
+        value: finnfischer2112@gmail.com
       - key: SMTP_TO
         value: finnfischer2112@gmail.com
       - key: SMTP_PASSWORD
