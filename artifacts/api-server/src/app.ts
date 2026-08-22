@@ -6,6 +6,10 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
+// Render sits behind a single trusted proxy. This lets rate limiting use the
+// real client IP without trusting arbitrary forwarded headers from the internet.
+app.set("trust proxy", 1);
+
 app.use(
   pinoHttp({
     logger,

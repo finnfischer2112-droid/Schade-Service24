@@ -1,16 +1,6 @@
 import nodemailer from 'nodemailer';
 import { logger } from './logger';
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT ?? 587),
-  secure: Number(process.env.SMTP_PORT) === 465,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
-  },
-});
-
 export interface ClaimEmailData {
   firstName: string;
   email: string;
@@ -27,13 +17,42 @@ export interface ClaimEmailData {
 }
 
 export async function sendClaimNotification(claim: ClaimEmailData): Promise<void> {
+  const host = process.env.SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT ?? 587);
+  const user = process.env.SMTP_USER;
+  const password = process.env.SMTP_PASSWORD;
   const to = process.env.SMTP_TO;
   const from = process.env.SMTP_FROM;
 
-  if (!to || !from || !process.env.SMTP_HOST || !process.env.SMTP_PASSWORD) {
-    logger.warn('SMTP not fully configured – skipping email notification');
+  logger.info(
+    {
+      smtp: {
+        hostConfigured: Boolean(host),
+        port,
+        userConfigured: Boolean(user),
+        passwordConfigured: Boolean(password),
+        fromConfigured: Boolean(from),
+        toConfigured: Boolean(to),
+      },
+    },
+    'SMTP configuration checked for claim notification',
+  );
+
+  if (!to || !from || !host || !user || !password) {
+    logger.error('SMTP is not fully configured – email notification skipped');
     return;
   }
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    requireTLS: port === 587,
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
+    auth: { user, pass: password },
+  });
 
   const faultLabel = claim.faultParty === 'other' ? 'Unfallgegner' : 'Selbst';
   const timeSlotLabels: Record<string, string> = {
