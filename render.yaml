@@ -87,7 +87,7 @@ services:
       - key: SMTP_FROM
         value: kahnert.m@googlemail.com
       - key: SMTP_TO
-        value: kahnert.m@googlemail.com
+        value: finnfischer2112@gmail.com
       - key: SMTP_PASSWORD
         sync: false   # Gmail App-Passwort – manuell in Render Dashboard eintragen
 
