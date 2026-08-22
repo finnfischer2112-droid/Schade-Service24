@@ -46,6 +46,7 @@ export async function sendClaimNotification(claim: ClaimEmailData): Promise<void
   const transporter = nodemailer.createTransport({
     host,
     port,
+    family: 4,
     secure: port === 465,
     requireTLS: port === 587,
     connectionTimeout: 10_000,
