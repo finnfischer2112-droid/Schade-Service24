@@ -77,15 +77,15 @@ services:
       - key: CORS_ORIGIN
         value: https://schaden-service24.com   # ← update when domain is connected
 
-      # SMTP – Gmail notifications for new claims
+      # SMTP – Hostinger notifications for new claims
       - key: SMTP_HOST
-        value: smtp.gmail.com
+        value: smtp.hostinger.com
       - key: SMTP_PORT
         value: 587
       - key: SMTP_USER
-        value: finnfischer2112@gmail.com
+        value: info@my-almaron.de
       - key: SMTP_FROM
-        value: finnfischer2112@gmail.com
+        value: info@my-almaron.de
       - key: SMTP_TO
         value: finnfischer2112@gmail.com
       - key: SMTP_PASSWORD
