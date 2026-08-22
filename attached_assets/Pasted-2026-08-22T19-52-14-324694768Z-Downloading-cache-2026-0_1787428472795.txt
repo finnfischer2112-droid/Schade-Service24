@@ -1,0 +1,60 @@
+2026-08-22T19:52:14.324694768Z ==> Downloading cache...
+2026-08-22T19:52:14.357732886Z ==> Cloning from https://github.com/finnfischer2112-droid/Schade-Service24
+2026-08-22T19:52:20.648598079Z ==> Checking out commit db42783567c9dbb657e4aac0131bde71af0c6635 in branch main
+2026-08-22T19:52:24.68526671Z ==> Downloaded 101MB in 6s. Extraction took 3s.
+2026-08-22T19:52:25.976440966Z ==> Using Node.js version 24.14.1 (default)
+2026-08-22T19:52:25.9764521Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-08-22T19:52:26.007547595Z ==> Running build command 'pnpm install --frozen-lockfile
+2026-08-22T19:52:26.007550781Z pnpm --filter @workspace/api-server run build
+2026-08-22T19:52:26.007552246Z '...
+2026-08-22T19:52:27.968810408Z 
+2026-08-22T19:52:27.968831688Z > @workspace/api-server@0.0.0 build /opt/render/project/src/artifacts/api-server
+2026-08-22T19:52:27.968835518Z > node ./build.mjs
+2026-08-22T19:52:27.968836817Z 
+2026-08-22T19:52:28.457101617Z 
+2026-08-22T19:52:28.457120164Z   dist/index.mjs                       2.3mb ⚠️
+2026-08-22T19:52:28.457122437Z   dist/pino-worker.mjs               153.4kb
+2026-08-22T19:52:28.457123919Z   dist/pino-file.mjs                 142.1kb
+2026-08-22T19:52:28.457128932Z   dist/pino-pretty.mjs               114.4kb
+2026-08-22T19:52:28.4571304Z   dist/thread-stream-worker.mjs        7.3kb
+2026-08-22T19:52:28.457132138Z   dist/index.mjs.map                   3.9mb
+2026-08-22T19:52:28.457133653Z   dist/pino-worker.mjs.map           256.9kb
+2026-08-22T19:52:28.457135395Z   dist/pino-file.mjs.map             229.0kb
+2026-08-22T19:52:28.457136733Z   dist/pino-pretty.mjs.map           203.6kb
+2026-08-22T19:52:28.45713812Z   dist/thread-stream-worker.mjs.map   12.0kb
+2026-08-22T19:52:28.45713931Z 
+2026-08-22T19:52:28.457141176Z ⚡ Done in 440ms
+2026-08-22T19:52:28.883449088Z ==> Uploading build...
+2026-08-22T19:52:34.895155179Z ==> Uploaded in 3.8s. Compression took 2.2s
+2026-08-22T19:52:34.897381493Z ==> Build successful 🎉
+2026-08-22T19:52:36.51979427Z ==> Deploying...
+2026-08-22T19:52:36.7058811Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-22T19:52:54.871567335Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-22T19:52:59.574775638Z 
+2026-08-22T19:52:59.574805829Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-22T19:52:59.574810889Z > node --enable-source-maps ./dist/index.mjs
+2026-08-22T19:52:59.574813019Z 
+2026-08-22T19:53:04.573409831Z {"level":30,"time":1787428384572,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","port":10000,"msg":"Server listening"}
+2026-08-22T19:53:05.582263017Z {"level":30,"time":1787428385581,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":1,"method":"HEAD","url":"/"},"res":{"statusCode":404},"responseTime":6,"msg":"request completed"}
+2026-08-22T19:53:06.423856119Z {"level":30,"time":1787428386423,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":2,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":5,"msg":"request completed"}
+2026-08-22T19:53:06.426248114Z {"level":30,"time":1787428386426,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":3,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:53:07.376090587Z ==> Your service is live 🎉
+2026-08-22T19:53:07.412419447Z {"level":30,"time":1787428387412,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":4,"method":"GET","url":"/"},"res":{"statusCode":404},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:07.58285308Z ==> 
+2026-08-22T19:53:07.588034444Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T19:53:07.594317062Z ==> 
+2026-08-22T19:53:07.600394364Z ==> Available at your primary URL https://schaden-service24-api.onrender.com
+2026-08-22T19:53:07.605271833Z ==> 
+2026-08-22T19:53:07.609901096Z ==> ///////////////////////////////////////////////////////////
+2026-08-22T19:53:11.427379126Z {"level":30,"time":1787428391427,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":5,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:16.426939272Z {"level":30,"time":1787428396426,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":6,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:21.426207685Z {"level":30,"time":1787428401425,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":7,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:53:26.426995999Z {"level":30,"time":1787428406426,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":8,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:31.42709501Z {"level":30,"time":1787428411426,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":9,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:36.420579364Z {"level":30,"time":1787428416420,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":10,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:36.425987913Z {"level":30,"time":1787428416425,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":11,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:53:41.428662316Z {"level":30,"time":1787428421428,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":12,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-22T19:53:46.426159071Z {"level":30,"time":1787428426425,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":13,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:53:51.425815709Z {"level":30,"time":1787428431425,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":14,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:53:56.426202852Z {"level":30,"time":1787428436425,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":15,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":0,"msg":"request completed"}
+2026-08-22T19:54:01.426693759Z {"level":30,"time":1787428441426,"pid":83,"hostname":"srv-da1i74g1ne8s73cgp6t0-hibernate-589c78775-2kjzl","req":{"id":16,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
