@@ -1,116 +1,59 @@
-# Deployment auf Render – Schritt-für-Schritt
+# Deployment auf Render
 
-## Voraussetzungen
-- GitHub-Account (Repo muss **public** oder mit Render verbunden sein)
-- Render-Account (kostenlos: https://render.com)
+## Zielarchitektur
 
----
+Render betreibt nur noch zwei Dienste:
 
-## 1. Projekt zu GitHub pushen
+1. `schaden-service24-web` – ein Node-Web-Service, der die React-Landingpage ausliefert und alle `/api`-Routen verarbeitet
+2. `schaden-service24-db` – die bestehende PostgreSQL-Datenbank
 
-```bash
-# Einmalig, im Projektordner:
-git init
-git add .
-git commit -m "initial commit"
-git remote add origin https://github.com/DEIN-USERNAME/schaden-service24.git
-git push -u origin main
-```
+Der frühere separate Service `schaden-service24-api` wird nach erfolgreicher Prüfung des kombinierten Web-Service entfernt.
 
----
+## Blueprint aktualisieren
 
-## 2. Blueprint in Render einrichten
+1. Änderungen in den verbundenen GitHub-Branch pushen.
+2. In Render den Blueprint öffnen und die aktuelle `render.yaml` synchronisieren.
+3. Prüfen, dass `schaden-service24-web` auf dem Starter-Plan läuft.
+4. Die Domain `schaden-service24.com` muss weiterhin mit `schaden-service24-web` verbunden sein.
+5. Die bestehende PostgreSQL-Datenbank nicht löschen oder neu anlegen.
 
-1. In Render einloggen → **"New +"** → **"Blueprint"**
-2. GitHub-Repo auswählen → Render liest `render.yaml` automatisch ein
-3. Render erstellt dann automatisch:
-   - `schaden-service24-db` (PostgreSQL)
-   - `schaden-service24-api` (Node.js Web Service)
-   - `schaden-service24-web` (Static Site)
+## Umgebungsvariablen
 
----
+Der kombinierte Web-Service benötigt:
 
-## 3. Nach dem ersten Deploy: URLs austauschen
+- `DATABASE_URL` aus `schaden-service24-db`
+- `SESSION_SECRET`
+- `SMTP_HOST=smtp.hostinger.com`
+- `SMTP_PORT=465`
+- `SMTP_USER=info@my-almaron.de`
+- `SMTP_FROM=info@my-almaron.de`
+- `SMTP_TO=finnfischer2112@gmail.com`
+- `SMTP_PASSWORD` als manuell gesetztes Render-Secret
 
-Nach dem ersten erfolgreichen Deploy erhalten Sie zwei Render-URLs:
+Das SMTP-Passwort darf niemals in GitHub, Logs oder Dokumentation eingetragen werden.
 
-| Dienst | Beispiel-URL |
-|--------|-------------|
-| API    | `https://schaden-service24-api.onrender.com` |
-| Website | `https://schaden-service24-web.onrender.com` |
+Die Replit-spezifischen Object-Storage-Variablen bleiben vorerst konfiguriert. Foto-Uploads sind auf Render weiterhin nicht garantiert; eine Schadenmeldung wird deshalb auch ohne erfolgreiche Fotos gespeichert.
 
-Tragen Sie diese URLs in den jeweiligen Umgebungsvariablen ein:
+## Build und Start
 
-**API Service → Environment → `CORS_ORIGIN`**
-```
-https://schaden-service24-web.onrender.com
-```
-*(oder Ihre eigene Domain, sobald verbunden)*
+Der kombinierte Service:
 
-**Static Site → Environment → `VITE_API_URL`**
-```
-https://schaden-service24-api.onrender.com
-```
-Danach: **Manual Deploy → Deploy latest commit** für die Static Site auslösen,
-damit die neue API-URL in den Build eingebacken wird.
+1. installiert die Workspace-Abhängigkeiten
+2. synchronisiert das Datenbankschema
+3. baut die React-Landingpage
+4. baut den Express-Server
+5. startet Express auf dem von Render gesetzten `PORT`
 
-> **Wichtig:** `VITE_API_URL` wird zur Build-Zeit in das JavaScript eingebaut.
-> Jede Änderung erfordert einen neuen Build (= neues Deploy der Static Site).
+Express liefert sowohl die Webseite als auch die API aus. Das Frontend verwendet relative `/api`-URLs; `VITE_API_URL` wird nicht mehr benötigt.
 
----
+## Prüfung vor Abschalten der alten API
 
-## 4. Health-Check-Route hinzufügen (empfohlen)
+Vor dem Entfernen von `schaden-service24-api` müssen folgende Prüfungen erfolgreich sein:
 
-Die `render.yaml` konfiguriert einen Health-Check auf `/api/health`.
-Fügen Sie diese Route in `artifacts/api-server/src/routes/index.ts` ein:
+- `GET /api/health` antwortet mit Status 200
+- Startseite und direkte Aufrufe von `/schaden-melden`, `/impressum` und `/datenschutz` funktionieren
+- eine neue Schadenmeldung wird mit Status 201 gespeichert
+- die Benachrichtigungs-E-Mail wird erfolgreich versendet
+- Render-Logs enthalten keine Build-, Datenbank- oder SMTP-Fehler
 
-```typescript
-router.get("/health", (_req, res) => {
-  res.json({ status: "ok" });
-});
-```
-
-Ohne diese Route zeigt Render einen Health-Check-Fehler – der Dienst läuft trotzdem,
-aber die Warnung erscheint im Dashboard.
-
----
-
-## 5. Datenbank-Migrations
-
-Die `preDeployCommand` in `render.yaml` führt `drizzle-kit push` automatisch
-vor jedem Deploy aus. Die `claims`-Tabelle wird also beim ersten Start angelegt.
-
----
-
-## 6. ⚠ Foto-Upload (Schaden-Melden)
-
-Der Foto-Upload nutzt **Replit Object Storage**, das außerhalb von Replit
-nicht verfügbar ist. Auf Render muss dieses durch einen S3-kompatiblen
-Dienst ersetzt werden (z. B. **AWS S3**, **Cloudflare R2**, **Backblaze B2**).
-
-**Betroffene Datei:** `artifacts/api-server/src/lib/objectStorage.ts`
-
-Bis zum Austausch schlägt das Hochladen von Fotos im Schadenmelde-Formular fehl.
-Die komplette Landing Page (alle anderen Seiten) funktioniert uneingeschränkt.
-
----
-
-## 7. Eigene Domain verbinden
-
-In Render → Dienst auswählen → **"Custom Domains"** → Domain eintragen.
-Render stellt automatisch ein kostenloses TLS-Zertifikat (Let's Encrypt) aus.
-
-Anschließend `CORS_ORIGIN` und `VITE_API_URL` auf die echten Domains aktualisieren
-und einen neuen Deploy auslösen.
-
----
-
-## Kostenübersicht (Stand 2026)
-
-| Plan | API Service | Static Site | Datenbank |
-|------|-------------|-------------|-----------|
-| Free | ✅ (schläft nach 15 min Inaktivität) | ✅ | ✅ (90 Tage TTL) |
-| Starter (~7 $/Monat pro Dienst) | Kein Sleep, SLA | — | Persistent |
-
-Für Produktionsbetrieb wird mindestens **Starter** für den API Service und
-die Datenbank empfohlen.
+Erst danach kann der alte API-Service in Render gelöscht werden. Die Datenbank bleibt bestehen.

@@ -1,5 +1,10 @@
 import nodemailer from 'nodemailer';
+import type SMTPTransport from 'nodemailer/lib/smtp-transport';
 import { logger } from './logger';
+
+type SmtpTransportOptions = SMTPTransport.Options & {
+  family: 4 | 6;
+};
 
 export interface ClaimEmailData {
   firstName: string;
@@ -43,7 +48,7 @@ export async function sendClaimNotification(claim: ClaimEmailData): Promise<void
     return;
   }
 
-  const transporter = nodemailer.createTransport({
+  const transportOptions: SmtpTransportOptions = {
     host,
     port,
     family: 4,
@@ -53,7 +58,8 @@ export async function sendClaimNotification(claim: ClaimEmailData): Promise<void
     greetingTimeout: 10_000,
     socketTimeout: 15_000,
     auth: { user, pass: password },
-  });
+  };
+  const transporter = nodemailer.createTransport(transportOptions);
 
   const faultLabel = claim.faultParty === 'other' ? 'Unfallgegner' : 'Selbst';
   const timeSlotLabels: Record<string, string> = {

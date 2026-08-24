@@ -5,15 +5,17 @@
 #
 # ARCHITECTURE
 # ─────────────────────────────────────────────────────────
-#  ┌─────────────────────────┐      ┌──────────────────────┐
-#  │  Static Site            │─────>│  Web Service          │
-#  │  (Vite / React)         │ API  │  (Express / Node.js)  │
-#  │  schaden-service24.com  │      │  api.schaden-…        │
-#  └─────────────────────────┘      └──────────┬───────────┘
-#                                              │ DATABASE_URL
-#                                   ┌──────────▼───────────┐
-#                                   │  PostgreSQL Database  │
-#                                   └──────────────────────┘
+#  ┌──────────────────────────────────────────────┐
+#  │  Combined Web Service (Express / Node.js)    │
+#  │  - serves the Vite/React landing page        │
+#  │  - handles all /api routes                   │
+#  │  - sends SMTP notifications                  │
+#  │  schaden-service24.com                       │
+#  └──────────────────────┬───────────────────────┘
+#                         │ DATABASE_URL
+#              ┌──────────▼───────────┐
+#              │  PostgreSQL Database  │
+#              └──────────────────────┘
 #
 # ⚠  OBJECT STORAGE NOTE
 #    The photo-upload feature (Schaden-Melden) uses Replit Object Storage,
@@ -34,17 +36,18 @@ databases:
 services:
 
   # ----------------------------------------------------------
-  # 1) API SERVER  (Node.js / Express)
+  # COMBINED WEB + API SERVICE  (React + Express)
   # ----------------------------------------------------------
   - type: web
-    name: schaden-service24-api
+    name: schaden-service24-web
     runtime: node
-    plan: free           # upgrade to "starter" for production (no sleep)
+    plan: starter
     region: frankfurt    # EU region for DSGVO compliance
 
     buildCommand: |
-      pnpm install --frozen-lockfile
+      pnpm install --frozen-lockfile --prod=false
       pnpm --filter @workspace/db run push
+      BASE_PATH=/ PORT=3000 pnpm --filter @workspace/landingpage run build
       pnpm --filter @workspace/api-server run build
 
     startCommand: pnpm --filter @workspace/api-server run start
@@ -52,9 +55,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-
-      # Render injects PORT automatically; the server already reads process.env.PORT
-      # — no override needed.
 
       - key: DATABASE_URL
         fromDatabase:
@@ -73,16 +73,15 @@ services:
       - key: PUBLIC_OBJECT_SEARCH_PATHS
         value: REPLACE_WITH_YOUR_PUBLIC_PATHS
 
-      # Allow the static site's origin so CORS is not blocked.
-      # Set this to your static site's Render URL or custom domain.
+      # Website and API share the same origin.
       - key: CORS_ORIGIN
-        value: https://schaden-service24.com   # ← update when domain is connected
+        value: https://schaden-service24.com
 
       # SMTP – Hostinger notifications for new claims
       - key: SMTP_HOST
         value: smtp.hostinger.com
       - key: SMTP_PORT
-        value: 587
+        value: 465
       - key: SMTP_USER
         value: info@my-almaron.de
       - key: SMTP_FROM
@@ -90,32 +89,6 @@ services:
       - key: SMTP_TO
         value: finnfischer2112@gmail.com
       - key: SMTP_PASSWORD
-        sync: false   # Gmail App-Passwort – manuell in Render Dashboard eintragen
+        sync: false   # Hostinger-Postfach-Passwort – manuell in Render eintragen
 
-    healthCheckPath: /api/health   # add a GET /api/health route (see DEPLOY.md)
-    # NOTE: preDeployCommand (DB migrations) is not supported on the free plan.
-    # Run migrations manually once after first deploy (see DEPLOY.md step 5).
-
-  # ----------------------------------------------------------
-  # 2) LANDING PAGE  (Vite / React – deployed as Node web service)
-  # ----------------------------------------------------------
-  - type: web
-    name: schaden-service24-web
-    runtime: node
-    plan: free
-    region: frankfurt
-
-    buildCommand: |
-      pnpm install --frozen-lockfile
-      BASE_PATH=/ PORT=3000 pnpm --filter @workspace/landingpage run build
-
-    # "serve" delivers the SPA and handles client-side routing (-s = single-page mode)
-    startCommand: npx serve -s artifacts/landingpage/dist/public -l $PORT
-
-    envVars:
-      - key: NODE_ENV
-        value: production
-
-      # Tell the React app where the API lives.
-      - key: VITE_API_URL
-        value: https://schaden-service24-api.onrender.com   # ← update after first deploy
+    healthCheckPath: /api/health
