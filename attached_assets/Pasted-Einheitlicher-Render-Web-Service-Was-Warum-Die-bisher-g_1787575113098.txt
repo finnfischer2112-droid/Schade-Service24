@@ -1,0 +1,38 @@
+Einheitlicher Render-Web-Service
+Was & Warum
+Die bisher getrennten Render-Web- und API-Services werden zu einem einzigen kostenpflichtigen Web-Service zusammengeführt. Der bestehende Web-Service bleibt erhalten, damit Domain und Landingpage-Zuordnung bestehen bleiben; Express liefert künftig sowohl die React-Webseite als auch die API aus. Die PostgreSQL-Datenbank bleibt als eigener Dienst bestehen.
+
+Fertig heißt
+Der bestehende Web-Service liefert die Landingpage und alle API-Routen unter derselben Domain aus.
+Die Schadenmeldung funktioniert ohne separate API-Domain, ohne Cross-Origin-Abhängigkeit und wird weiterhin in PostgreSQL gespeichert.
+Der Web-Service läuft mit einem einzigen Build- und Startprozess auf Render und verwendet den von Render bereitgestellten Port.
+SMTP wird aus dem kostenpflichtigen Web-Service getestet und erfolgreich an das konfigurierte Empfängerpostfach zugestellt.
+Health-Check, SPA-Routing, Schadenmelde-Funnel, Fotoverhalten und rechtliche Seiten funktionieren nach der Zusammenlegung weiterhin.
+Die separate API-Service-Konfiguration wird erst nach erfolgreichem End-to-End-Test entfernt; die Datenbank und ihre Daten werden nicht gelöscht.
+Die Anwendung enthält keine SMTP-Passwörter oder sonstigen Zugangsdaten im Repository.
+Out of scope
+Löschen oder Ersetzen der bestehenden PostgreSQL-Datenbank.
+Neugestaltung der Landingpage oder Änderungen am Inhalt, Tracking und Cookie-Banner.
+Ersatz des Foto-Object-Storage-Systems.
+Einführung eines zusätzlichen Mail-Anbieters, solange SMTP aus dem kostenpflichtigen Web-Service nachweislich funktioniert.
+Änderungen an der Domainregistrierung außerhalb der notwendigen Render-Service-Zuordnung.
+Steps
+Gemeinsame Serverstruktur — Den Express-Server so erweitern, dass er das gebaute React-Frontend ausliefert, API-Pfade priorisiert und unbekannte Nicht-API-Pfade an die SPA weiterleitet, damit direkte Aufrufe und Client-Routing funktionieren.
+Gleicher API-Ursprung — Die Frontend-Konfiguration auf relative API-Aufrufe bzw. denselben Ursprung umstellen und die bisherige Abhängigkeit von VITE_API_URL zur separaten API entfernen.
+Einheitlicher Build und Start — Den Render-Build so anpassen, dass Datenbankschema, Frontend und Server in der richtigen Reihenfolge gebaut werden; der Web-Service startet danach ausschließlich den kombinierten Express-Prozess.
+Render-Umgebung konsolidieren — Datenbank-, Session-, Object-Storage-, CORS- und SMTP-Variablen am bestehenden Web-Service konfigurieren und den Health-Check auf den kombinierten Dienst ausrichten. Die Domain bleibt am bestehenden Web-Service.
+Sicherer Übergang — Den kombinierten Web-Service zunächst deployen und prüfen, bevor der separate API-Service aus der Blueprint-Konfiguration entfernt bzw. in Render abgeschaltet wird. Die Datenbankverbindung und vorhandene Schadenmeldungen müssen dabei erhalten bleiben.
+End-to-End-Verifikation — Landingpage, direkte SPA-Routen, /api/health, Schadenmeldung mit und ohne Fotos sowie die SMTP-Zustellung testen; Render-Build- und Laufzeitlogs auf Fehler prüfen. Falls SMTP auch im kostenpflichtigen Web-Service nicht erreichbar ist, den Abbau des API-Service nicht als erfolgreich markieren und eine alternative Versandarchitektur abstimmen.
+Relevant files
+render.yaml
+artifacts/api-server/src/app.ts
+artifacts/api-server/src/index.ts
+artifacts/api-server/src/routes/index.ts
+artifacts/api-server/src/routes/health.ts
+artifacts/api-server/build.mjs
+artifacts/api-server/package.json
+artifacts/landingpage/src/main.tsx
+artifacts/landingpage/vite.config.ts
+artifacts/landingpage/package.json
+lib/db/package.json
+lib/db/drizzle.config.ts
