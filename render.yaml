@@ -10,7 +10,7 @@
 #  │  - serves the Vite/React landing page        │
 #  │  - handles all /api routes                   │
 #  │  - sends SMTP notifications                  │
-#  │  schaden-service24.com                       │
+#  │  saarpfalzreifen24.de                        │
 #  └──────────────────────┬───────────────────────┘
 #                         │ DATABASE_URL
 #              ┌──────────▼───────────┐
@@ -64,18 +64,9 @@ services:
       - key: SESSION_SECRET
         generateValue: true    # Render generates a random secret on first deploy
 
-      # Object-storage env vars (currently Replit-specific – see ⚠ note above).
-      # Replace values with your S3-compatible bucket details before enabling photo upload.
-      - key: DEFAULT_OBJECT_STORAGE_BUCKET_ID
-        value: REPLACE_WITH_YOUR_BUCKET_ID
-      - key: PRIVATE_OBJECT_DIR
-        value: REPLACE_WITH_YOUR_PRIVATE_DIR
-      - key: PUBLIC_OBJECT_SEARCH_PATHS
-        value: REPLACE_WITH_YOUR_PUBLIC_PATHS
-
       # Website and API share the same origin.
       - key: CORS_ORIGIN
-        value: https://schaden-service24.com
+        value: https://saarpfalzreifen24.de
 
       # SMTP – Hostinger notifications for new claims
       - key: SMTP_HOST

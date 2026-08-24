@@ -14,7 +14,7 @@ Der frühere separate Service `schaden-service24-api` wird nach erfolgreicher Pr
 1. Änderungen in den verbundenen GitHub-Branch pushen.
 2. In Render den Blueprint öffnen und die aktuelle `render.yaml` synchronisieren.
 3. Prüfen, dass `schaden-service24-web` auf dem Starter-Plan läuft.
-4. Die Domain `schaden-service24.com` muss weiterhin mit `schaden-service24-web` verbunden sein.
+4. Die Domain `saarpfalzreifen24.de` muss mit `schaden-service24-web` verbunden sein.
 5. Die bestehende PostgreSQL-Datenbank nicht löschen oder neu anlegen.
 
 ## Umgebungsvariablen
@@ -32,7 +32,7 @@ Der kombinierte Web-Service benötigt:
 
 Das SMTP-Passwort darf niemals in GitHub, Logs oder Dokumentation eingetragen werden.
 
-Die Replit-spezifischen Object-Storage-Variablen bleiben vorerst konfiguriert. Foto-Uploads sind auf Render weiterhin nicht garantiert; eine Schadenmeldung wird deshalb auch ohne erfolgreiche Fotos gespeichert.
+Die Replit-spezifischen Object-Storage-Variablen werden auf Render nicht konfiguriert. Die Platzhalterwerte dürfen nicht verwendet werden. Foto-Uploads benötigen später einen kompatiblen Object-Storage; eine Schadenmeldung wird auch ohne erfolgreiche Fotos gespeichert.
 
 ## Build und Start
 
