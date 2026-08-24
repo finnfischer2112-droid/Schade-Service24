@@ -1,0 +1,29 @@
+2026-08-24T12:44:36.264154259Z ==> Deploying...
+2026-08-24T12:44:36.447083111Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-24T12:44:54.406682989Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-24T12:44:58.899139447Z 
+2026-08-24T12:44:58.899165058Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-24T12:44:58.899172918Z > node --enable-source-maps ./dist/index.mjs
+2026-08-24T12:44:58.899176248Z 
+2026-08-24T12:44:59.109942993Z node:internal/modules/cjs/loader:1459
+2026-08-24T12:44:59.109961553Z   throw err;
+2026-08-24T12:44:59.109967253Z   ^
+2026-08-24T12:44:59.109971453Z 
+2026-08-24T12:44:59.109976504Z Error: Cannot find module '/opt/render/project/src/artifacts/api-server/dist/index.mjs'
+2026-08-24T12:44:59.109981884Z     at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+2026-08-24T12:44:59.109986484Z     at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+2026-08-24T12:44:59.109991514Z     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+2026-08-24T12:44:59.109996914Z     at Module._load (node:internal/modules/cjs/loader:1242:25)
+2026-08-24T12:44:59.110001494Z     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2026-08-24T12:44:59.110006134Z     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+2026-08-24T12:44:59.110011095Z     at node:internal/main/run_main_module:33:47 {
+2026-08-24T12:44:59.110016015Z   code: 'MODULE_NOT_FOUND',
+2026-08-24T12:44:59.110021225Z   requireStack: []
+2026-08-24T12:44:59.110025945Z }
+2026-08-24T12:44:59.110030685Z 
+2026-08-24T12:44:59.110035226Z Node.js v24.14.1
+2026-08-24T12:44:59.297950533Z /opt/render/project/src/artifacts/api-server:
+2026-08-24T12:44:59.297975123Z  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/api-server@0.0.0 start: `node --enable-source-maps ./dist/index.mjs`
+2026-08-24T12:44:59.297981964Z Exit status 1
+2026-08-24T12:45:01.160549035Z ==> Exited with status 1
+2026-08-24T12:45:01.167081971Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
