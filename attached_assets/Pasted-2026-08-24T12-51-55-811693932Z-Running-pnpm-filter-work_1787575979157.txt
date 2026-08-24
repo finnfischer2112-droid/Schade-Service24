@@ -1,0 +1,50 @@
+2026-08-24T12:51:55.811693932Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-24T12:51:59.705156157Z 
+2026-08-24T12:51:59.705218198Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-24T12:51:59.705228578Z > node --enable-source-maps ./dist/index.mjs
+2026-08-24T12:51:59.705232308Z 
+2026-08-24T12:51:59.91116082Z node:internal/modules/cjs/loader:1459
+2026-08-24T12:51:59.911186571Z   throw err;
+2026-08-24T12:51:59.911203512Z   ^
+2026-08-24T12:51:59.911209542Z 
+2026-08-24T12:51:59.911213082Z Error: Cannot find module '/opt/render/project/src/artifacts/api-server/dist/index.mjs'
+2026-08-24T12:51:59.911216642Z     at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+2026-08-24T12:51:59.911219462Z     at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+2026-08-24T12:51:59.911222242Z     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+2026-08-24T12:51:59.911225342Z     at Module._load (node:internal/modules/cjs/loader:1242:25)
+2026-08-24T12:51:59.911228122Z     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2026-08-24T12:51:59.911231042Z     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+2026-08-24T12:51:59.911234322Z     at node:internal/main/run_main_module:33:47 {
+2026-08-24T12:51:59.911237182Z   code: 'MODULE_NOT_FOUND',
+2026-08-24T12:51:59.911240272Z   requireStack: []
+2026-08-24T12:51:59.911243293Z }
+2026-08-24T12:51:59.911245913Z 
+2026-08-24T12:51:59.911248393Z Node.js v24.14.1
+2026-08-24T12:52:00.014670939Z /opt/render/project/src/artifacts/api-server:
+2026-08-24T12:52:00.01468748Z  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/api-server@0.0.0 start: `node --enable-source-maps ./dist/index.mjs`
+2026-08-24T12:52:00.01469336Z Exit status 1
+2026-08-24T12:52:31.002025962Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-24T12:52:34.49870215Z 
+2026-08-24T12:52:34.498738521Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-24T12:52:34.498747391Z > node --enable-source-maps ./dist/index.mjs
+2026-08-24T12:52:34.498751971Z 
+2026-08-24T12:52:34.704694044Z node:internal/modules/cjs/loader:1459
+2026-08-24T12:52:34.704722934Z   throw err;
+2026-08-24T12:52:34.704728655Z   ^
+2026-08-24T12:52:34.704733095Z 
+2026-08-24T12:52:34.704739285Z Error: Cannot find module '/opt/render/project/src/artifacts/api-server/dist/index.mjs'
+2026-08-24T12:52:34.704744715Z     at Module._resolveFilename (node:internal/modules/cjs/loader:1456:15)
+2026-08-24T12:52:34.704749545Z     at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+2026-08-24T12:52:34.704754365Z     at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+2026-08-24T12:52:34.704759965Z     at Module._load (node:internal/modules/cjs/loader:1242:25)
+2026-08-24T12:52:34.704764475Z     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+2026-08-24T12:52:34.704769185Z     at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+2026-08-24T12:52:34.704774376Z     at node:internal/main/run_main_module:33:47 {
+2026-08-24T12:52:34.704779776Z   code: 'MODULE_NOT_FOUND',
+2026-08-24T12:52:34.704783516Z   requireStack: []
+2026-08-24T12:52:34.704786616Z }
+2026-08-24T12:52:34.704789606Z 
+2026-08-24T12:52:34.704792666Z Node.js v24.14.1
+2026-08-24T12:52:34.80685423Z /opt/render/project/src/artifacts/api-server:
+2026-08-24T12:52:34.806884381Z  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/api-server@0.0.0 start: `node --enable-source-maps ./dist/index.mjs`
+2026-08-24T12:52:34.806892871Z Exit status 1
