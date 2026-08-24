@@ -1,0 +1,79 @@
+2026-08-24T13:04:30.417795592Z ==> Cloning from https://github.com/finnfischer2112-droid/Schade-Service24
+2026-08-24T13:04:36.727537602Z ==> Checking out commit 47ae9f12628c31da42f10d27dc4a93db1547a3d4 in branch main
+2026-08-24T13:04:38.062012504Z ==> Using Node.js version 24.14.1 (default)
+2026-08-24T13:04:38.062019376Z ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+2026-08-24T13:04:38.094909905Z ==> Running build command 'pnpm install --frozen-lockfile --prod=false && pnpm --filter @workspace/db run push && BASE_PATH=/ PORT=3000 pnpm --filter @workspace/landingpage run build && pnpm --filter @workspace/api-server run build'...
+2026-08-24T13:04:45.122089921Z 
+2026-08-24T13:04:45.122109126Z > @workspace/db@0.0.0 push /opt/render/project/src/lib/db
+2026-08-24T13:04:45.122112992Z > drizzle-kit push --config ./drizzle.config.ts
+2026-08-24T13:04:45.122114324Z 
+2026-08-24T13:04:45.260652141Z Reading config file '/opt/render/project/src/lib/db/drizzle.config.ts'
+2026-08-24T13:04:45.671345492Z Using 'pg' driver for database querying
+2026-08-24T13:04:45.928339027Z [⣷] Pulling schema from database...
+2026-08-24T13:04:46.049306108Z [⣯] Pulling schema from database...
+2026-08-24T13:04:46.177763442Z [⣟] Pulling schema from database...
+2026-08-24T13:04:46.219975629Z [✓] Pulling schema from database...
+2026-08-24T13:04:46.225444004Z [i] No changes detected
+2026-08-24T13:04:46.629959147Z 
+2026-08-24T13:04:46.62997937Z > @workspace/landingpage@0.0.0 build /opt/render/project/src/artifacts/landingpage
+2026-08-24T13:04:46.629981657Z > vite build --config vite.config.ts
+2026-08-24T13:04:46.629983117Z 
+2026-08-24T13:04:46.881114887Z vite v7.3.6 building client environment for production...
+2026-08-24T13:04:46.949361786Z transforming...
+2026-08-24T13:04:47.310428381Z src/components/ui/tooltip.tsx (2:0): Error when using sourcemap for reporting an error: Can't resolve original location of error.
+2026-08-24T13:04:49.792988204Z ✓ 2409 modules transformed.
+2026-08-24T13:04:50.274535076Z rendering chunks...
+2026-08-24T13:04:50.283568271Z computing gzip size...
+2026-08-24T13:04:50.302291254Z dist/public/index.html                   8.75 kB │ gzip:   2.56 kB
+2026-08-24T13:04:50.302314474Z dist/public/assets/index-Dn_zlRYo.css  177.55 kB │ gzip:  28.19 kB
+2026-08-24T13:04:50.30233724Z dist/public/assets/index-DZoGX-Ow.js   564.36 kB │ gzip: 177.79 kB
+2026-08-24T13:04:50.302384347Z 
+2026-08-24T13:04:50.302387706Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-08-24T13:04:50.302389514Z - Using dynamic import() to code-split the application
+2026-08-24T13:04:50.302391165Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-08-24T13:04:50.302392654Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-08-24T13:04:50.302627242Z ✓ built in 3.40s
+2026-08-24T13:04:50.805227432Z 
+2026-08-24T13:04:50.805252533Z > @workspace/api-server@0.0.0 build /opt/render/project/src/artifacts/api-server
+2026-08-24T13:04:50.805254898Z > node ./build.mjs
+2026-08-24T13:04:50.80525659Z 
+2026-08-24T13:04:51.313310875Z 
+2026-08-24T13:04:51.313331426Z   dist/index.mjs                       2.3mb ⚠️
+2026-08-24T13:04:51.313346003Z   dist/pino-worker.mjs               153.4kb
+2026-08-24T13:04:51.313347703Z   dist/pino-file.mjs                 142.1kb
+2026-08-24T13:04:51.313357965Z   dist/pino-pretty.mjs               114.4kb
+2026-08-24T13:04:51.313362248Z   dist/thread-stream-worker.mjs        7.3kb
+2026-08-24T13:04:51.313363702Z   dist/index.mjs.map                   3.9mb
+2026-08-24T13:04:51.313365065Z   dist/pino-worker.mjs.map           256.9kb
+2026-08-24T13:04:51.313366383Z   dist/pino-file.mjs.map             229.0kb
+2026-08-24T13:04:51.313367775Z   dist/pino-pretty.mjs.map           203.6kb
+2026-08-24T13:04:51.313369137Z   dist/thread-stream-worker.mjs.map   12.0kb
+2026-08-24T13:04:51.313370265Z 
+2026-08-24T13:04:51.313372176Z ⚡ Done in 458ms
+2026-08-24T13:04:52.080947355Z ==> Uploading build...
+2026-08-24T13:04:58.730712655Z ==> Uploaded in 4.3s. Compression took 2.4s
+2026-08-24T13:04:58.733552887Z ==> Build successful 🎉
+2026-08-24T13:05:00.906063694Z ==> Deploying...
+2026-08-24T13:05:01.123947634Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-08-24T13:05:21.567948452Z ==> Running 'pnpm --filter @workspace/api-server run start'
+2026-08-24T13:05:26.380029116Z 
+2026-08-24T13:05:26.380063757Z > @workspace/api-server@0.0.0 start /opt/render/project/src/artifacts/api-server
+2026-08-24T13:05:26.380071867Z > node --enable-source-maps ./dist/index.mjs
+2026-08-24T13:05:26.380076827Z 
+2026-08-24T13:05:31.569774671Z {"level":30,"time":1787576731568,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","port":10000,"msg":"Server listening"}
+2026-08-24T13:05:31.671644902Z {"level":30,"time":1787576731670,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":1,"method":"HEAD","url":"/"},"res":{"statusCode":200},"responseTime":72,"msg":"request completed"}
+2026-08-24T13:05:42.116568668Z ==> Your service is live 🎉
+2026-08-24T13:05:42.298866626Z ==> 
+2026-08-24T13:05:42.302000971Z ==> ///////////////////////////////////////////////////////////
+2026-08-24T13:05:42.305365231Z ==> 
+2026-08-24T13:05:42.30885801Z ==> Available at your primary URL https://saarpfalzreifen24.de + 2 more domains
+2026-08-24T13:05:42.315027643Z ==> 
+2026-08-24T13:05:42.318741305Z ==> ///////////////////////////////////////////////////////////
+2026-08-24T13:05:42.167841505Z {"level":30,"time":1787576742167,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":2,"method":"GET","url":"/"},"res":{"statusCode":200},"responseTime":11,"msg":"request completed"}
+2026-08-24T13:05:49.15447786Z {"level":30,"time":1787576749154,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":3,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":4,"msg":"request completed"}
+2026-08-24T13:05:55.47538395Z {"level":30,"time":1787576755475,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":4,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-24T13:05:55.943759116Z {"level":30,"time":1787576755943,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":5,"method":"GET","url":"/api/health"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-24T13:05:56.417571617Z {"level":30,"time":1787576756417,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":6,"method":"GET","url":"/"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-24T13:05:56.607859091Z {"level":30,"time":1787576756607,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":7,"method":"GET","url":"/schaden-melden"},"res":{"statusCode":200},"responseTime":3,"msg":"request completed"}
+2026-08-24T13:05:56.798306672Z {"level":30,"time":1787576756797,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":8,"method":"GET","url":"/impressum"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
+2026-08-24T13:05:56.98677266Z {"level":30,"time":1787576756986,"pid":83,"hostname":"srv-da1i6qg1ne8s73cgoqdg-hibernate-6f9d4d6fc4-fs5wf","req":{"id":9,"method":"GET","url":"/datenschutz"},"res":{"statusCode":200},"responseTime":1,"msg":"request completed"}
