@@ -1,0 +1,61 @@
+HTML-SEITEN
+
+Fügen Sie das allgemeine Website-Tag auf jeder Seite der Website ein.
+Öffnen Sie den HTML-Code jeder einzelnen Seite.
+Führen Sie einen der folgenden Schritte aus:
+Wenn Sie das allgemeine Website-Tag noch nicht auf Ihrer Website eingefügt haben, kopieren Sie das Tag unten und fügen Sie es zwischen den head-Tags (<head></head>) ein:
+
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-921888031"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-921888031'); </script>
+
+Weitere Informationen zum Einrichten des allgemeinen Website-Tags
+
+Falls Sie das allgemeine Website-Tag über ein anderes Google-Produkt (etwa Google Analytics) oder ein anderes Google Ads-Konto auf Ihrer Website eingefügt haben, kopieren Sie den Befehl "config" unten und fügen Sie ihn in jeder Instanz des allgemeinen Website-Tags oberhalb des schließenden Tags </script> ein.
+
+gtag('config', 'AW-921888031');
+
+Wenn das allgemeine Website-Tag bereits von Ihnen oder über ein Verwaltungskonto auf Ihrer Website eingefügt und für eine andere Conversion-Aktion eingerichtet wurde, muss das Tag auf jeder Seite der Website vorhanden und im Befehl "config" die Conversion-ID dieses Google Ads-Kontos enthalten sein: AW-921888031
+Speichern Sie die Änderungen an den Webseiten.
+
+Fügen Sie das Ereignis-Snippet auf der Conversion-Seite ein. Das ist die Seite, zu der Ihre Kunden nach einer Conversion auf Ihrer Website gelangen. Dies kann beispielsweise eine Seite mit der Mitteilung "Vielen Dank für Ihre Bestellung" sein.
+Öffnen Sie den HTML-Code der Conversion-Seite.
+Kopieren Sie das Snippet unten und fügen Sie es zwischen den head-Tags (<head></head>) der Seite direkt nach dem allgemeinen Website-Tag ein.
+
+<!-- Event snippet for Sonstige conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-921888031/IGMMCLSbyuwcEJ_Ky7cD'}); </script>
+
+Speichern Sie die Änderungen an der Webseite.
+AMP-SEITEN
+
+Sie sollten dieser Anleitung für alle Seiten folgen, die mit dem AMP-Framework erstellt wurden.
+
+Fügen Sie das allgemeine Website-Tag auf jeder Seite der Website ein.
+Öffnen Sie den HTML-Code jeder einzelnen Seite.
+Führen Sie einen der folgenden Schritte aus:
+Wenn Sie das allgemeine Website-Tag nicht auf Ihrer Website installiert haben, fügen Sie diese beiden Tags hinzu:
+Kopieren Sie zuerst das Tag unten und fügen Sie es zwischen den head-Tags (<head></head>) vor der AMP JS-Bibliothek ein.
+
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+Kopieren Sie dann das Tag unten und fügen Sie es zwischen den body-Tags (<body></body>) aller AMP-Seiten ein
+
+<!-- Google tag (gtag.js) --> <amp-analytics type="gtag" data-credentials="include"> <script type="application/json"> { "vars": { "gtag_id": "AW-921888031", "config": { "AW-921888031": { "groups": "default" } } }, "triggers": { } } </script> </amp-analytics>
+
+Weitere Informationen zum Einrichten des allgemeinen Website-Tags
+Falls Sie das allgemeine Website-Tag über ein anderes Google-Produkt (etwa Google Analytics) oder ein anderes Google Ads-Konto auf Ihrer Website eingefügt haben, kopieren Sie die Zeile unten und fügen Sie sie im Abschnitt "config" jeder Instanz des allgemeinen Website-Tags ein.
+
+"AW-921888031": { "groups": "default" }
+
+Wenn das allgemeine Website-Tag bereits von Ihnen oder über ein Verwaltungskonto auf Ihrer Website eingefügt und für eine andere Conversion-Aktion eingerichtet wurde, muss das Tag auf jeder Seite der Website vorhanden und im Abschnitt "config" die Conversion-ID dieses Google Ads-Kontos enthalten sein: AW-921888031
+Speichern Sie die Änderungen an den Webseiten.
+
+Fügen Sie das Ereignis-Snippet auf der Conversion-Seite ein. Das ist die Seite, zu der Ihre Kunden nach einer Conversion auf Ihrer Website gelangen. Dies kann beispielsweise eine Seite mit der Mitteilung "Vielen Dank für Ihre Bestellung" sein.
+Öffnen Sie den HTML-Code der Conversion-Seite.
+Kopieren Sie das Snippet unten und fügen Sie es im Abschnitt "triggers" des allgemeinen Website-Tags ein.
+
+"C_8Ljk22CzoDM": { "on": "visible", "vars": { "event_name": "conversion", "send_to": ["AW-921888031/IGMMCLSbyuwcEJ_Ky7cD"] } }
+
+Speichern Sie die Änderungen an der Webseite.
+Weitere Informationen zum Einfügen eines Conversion-Tracking-Tags auf der Website
+
+Viele Grüße
+Ihr Google Ads-Team
+
